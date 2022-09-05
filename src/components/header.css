@@ -1,0 +1,52 @@
+.App-header{
+    background-color: #0F2F1D;
+    height: 90px;
+;
+  }
+  navbar {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  navbar ul{
+    list-style: none;
+    display: flex;
+    margin-top: 30px;
+  }
+  navbar ul a{
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 23px;
+  margin-left: 20px;
+  
+  color: #FFFFFF;
+  }
+  navbar ul a:hover{
+    text-decoration: underline;
+  }
+  navbar ul a img{
+    margin-right: 5px;
+  }
+  navbar .acendlogo{
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    margin-top: 20px;
+    
+  }
+  navbar .acendlogo img{
+    height: 45px;
+  }
+  navbar .acendlogo p{
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  margin-top: 20px;
+  
+  
+  color: #FFFFFF;
+  }

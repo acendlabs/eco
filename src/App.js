@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
 
+
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Home from './pages/home';
+import Wallet from './pages/wallet';
+import Header from './components/header';
+import Dispose from './pages/dispose';
+import Dashboard from './pages/dashboard';
+import Collect from './pages/collect';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <BrowserRouter>
+      <Header/>
+      <Routes>
+        <Route path='/' element= {<Home/>} />
+        <Route path='wallet' element ={<Wallet/>} />
+        <Route path='*' element = { <h2>oops nothing here</h2>} />
+        <Route path='dispose' element = {<Dispose/>}/>
+        <Route path='dashboard' element ={<Dashboard/>} />
+        <Route path='collect' element={<Collect />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

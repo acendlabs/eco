@@ -1,0 +1,226 @@
+.dashboard{
+    padding-left: 70px;
+    position: absolute;
+    top: 50px;
+}
+.dashboard h2{
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 49px;
+    text-align: justify;
+    padding-top: 70px;
+}
+.group1{
+    display: flex;
+    
+}
+.group1 .left a{
+    text-decoration: none;
+}
+.group1 .left{
+    display: flex;
+}
+.ellipse{
+    width: 120px;
+    height: 120px;
+    border: 4.35146px solid #0F2F1D;
+    border-radius: 50%;
+    
+}
+.ellipse img{
+    margin-left: 25px;
+    margin-top: 25px;
+    height: 70px;
+}
+.left .changeavatar{
+    display: flex;
+}
+.changeavatar img{
+    height: 20px;
+    margin-top: 10px;
+}
+.changeavatar p{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+}
+.dashboard .right{
+    margin-left: 25%;
+    margin-bottom: 70px;
+}
+.dashboard .right h3{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #000000;
+}
+.dashboard .right input{
+    width: 300px;
+    height: 40px;
+    border: 2px solid #0F2F1D;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding-left: 20px;
+    background: transparent;
+}
+.dashboard .right input::placeholder{
+    font-family: 'Jost', 'sans-serif';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 23px;
+    color: #333333;
+    
+}
+.dashboard .right button{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    margin-top: 30px;
+    color: #2C8C57;
+    border: none;
+    background-color: transparent;
+    font-family: 'Jost', 'sans-serif';
+    cursor: pointer;
+}
+.dashboard #remove{
+    position: absolute;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #2C8C57;
+    background: transparent;
+    margin-top:-90px !important;
+    border: none;
+    font-family: 'Jost', 'sans-serif';
+}
+.card1{
+    width: 680px;
+    height: 500px;
+    background: #EFF6F2;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+ .dashboard .group2{
+    display: flex;
+    margin-top: -165px !important;
+}
+.group2 img{
+    height: 50px;
+}
+.group2 .left{
+    display: flex;
+    flex-direction: column;
+}
+.group2 .left h2{
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 32px;
+    color: #000000;
+}
+.links, .header, .items{
+    display: flex;
+}
+.links a{
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #2C8C57;
+}
+.links a:hover{
+    color: #000000;
+}
+.header{
+    margin-left: 70px;
+}
+.header p{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    margin-left: 30px;
+}
+.items{
+    justify-content: space-evenly;
+}
+button{
+    cursor: pointer;
+    border: none;
+}
+.card1 .accept{
+    width: 150px;
+    height: 45px;
+    background: #0F2F1D;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #FFFFFF;
+}
+.card1 .accept:hover{
+    color: #0F2F1D;
+    background:#FFFFFF ;
+}
+.card1 .decline{
+    width: 150px;
+    height: 45px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #0F2F1D;
+}
+.card1 .decline:hover{
+    background: #0F2F1D;
+    color: #FFFFFF;
+}
+.group2 .right{
+    margin-right: 50px;
+}
+.group2 .card2{
+    width: 395px;
+    height: 500px;
+    background: #EFF6F2;
+    border-radius: 10px;
+    margin-left: -170px;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+.group2 .right h2{
+    font-style: normal;
+font-weight: 600;
+font-size: 22px;
+line-height: 32px;
+color: #000000;
+margin-left: -170px;
+}
+.group2 .right .itemgroup{
+    width: 370px;
+    height: 60px ;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    background: #FFFFFF;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.group2 .right .itemgroup h3{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px
+}
+.group2 .right .itemgroup .icon img{
+    width: 12px;
+    height: 12px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.group2 .right .itemgroup .icon:hover{
+    margin-top: 5px;
+}
+
