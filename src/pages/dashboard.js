@@ -8,7 +8,7 @@ import arrow from "../images/arrowdown.png";
 
 const Dashboard = () => {
   return (
-    <div className="bggroup">
+    <div className="bggroupnp">
       <img className="bgimg" src={logolight} alt="" />
       <div className="dashboard">
         <h2>Dashboard</h2>
