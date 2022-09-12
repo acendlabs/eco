@@ -1,202 +1,76 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import "./dashboard.css";
-import addimage from "../images/addimage.png";
-import avatar from "../images/pictureavatar.png";
 import logolight from "../images/logolight.png";
-import arrow from "../images/arrowdown.png";
-import Modal from "../components/modal/Modal";
+import Alert from "../components/layout/Alert";
+import Table from "../components/layout/Table";
+import Notifications from "../components/layout/Notifications";
+import Avatar from "../components/layout/Avatar";
+import Form from "../components/Forms/Form";
+import Pagination from "../components/layout/Pagination";
 
 const Dashboard = () => {
-  const [file, setFile] = useState("");
+  const [file, setFile] = useState({ data: null });
   const [filename, setFilename] = useState("Choose Image");
+  const [user, setUser] = useState({ username: "" });
+  const [alert, setAlert] = useState({});
+  console.log(filename);
 
-  const onChange = (e) => {
-    setFile(e.target.files[0]);
+  console.log(alert, user.username, file);
+  const onFileChange = (e) => {
+    setFile({ data: URL.createObjectURL(e.target.files[0]) });
     setFilename(e.target.files[0].name);
   };
 
+  const onChange = (e) => {
+    setUser({ [e.target.name]: e.target.value });
+  };
+
+  const remove = () => {
+    setFile({ data: null });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (user.username === "" || user.username === null) {
+      setAlert({ type: "danger", msg: "Enter all fields" });
+      setTimeout(() => {
+        setAlert({});
+      }, 1000);
+    } else {
+      setAlert({ type: "success", msg: "Success" });
+      setUser({});
+      setTimeout(() => {
+        setAlert({});
+      }, 1500);
+    }
+  };
+
   return (
-    <div className="flex flex-col mx-28">
-      {/* <img className="w-44 h-44 " src={logolight} alt="" /> */}
-      {/* <h2>Dashboard</h2> */}
-      <div className="flex flex-col justify-center md:flex-row md:justify-between h-[380px] md:h-64 items-center space-y-8 md:space-y-0">
-        <div className="relative w-auto bg-gray-600 overflow-visible">
-          <img
-            className="rounded-full p-8 border-[5px] border-[#0F2F1D]"
-            src={file ? avatar : file}
-            alt=""
-          />
-
-          <input
-            style={{ display: "none" }}
-            type="file"
-            id="file"
-            accept="image/*"
-            onChange={onChange}
-          />
-          <label
-            className="absolute top-0 right-0 cursor-pointer"
-            htmlFor="file"
-          >
-            <img className="w-6 h-6" src={addimage} alt="" />
-          </label>
-        </div>
-        <form className="md:w-9/12 flex-col bg-slate-500">
-          <div className="w-full  md:w-[32vw] space-y-3 text-[#0F2F1D]">
-            <label className="text-lg font-medium" for="username">
-              Username
-            </label>
-            <input
-              className="w-full rounded-lg border-[3px] border-[#0F2F1D] bg-transparent py-3.5 px-8 text-base outline-none"
-              type="text"
-              name="username"
-              placeholder="Enter a display name"
-            />
-          </div>
-        </form>
-        {/* <button>Become a Recycler</button> */}
+    <div className="relative flex flex-col container">
+      <Alert alert={alert} />
+      <img
+        className="w-[40%] h-auto absolute -z-10 left-[50%] -translate-x-2/4 opacity-25"
+        src={logolight}
+        alt=""
+      />
+      <h2 className="text-4xl font-black mt-8 mb-1">Dashboard</h2>
+      <div className="flex flex-col justify-center md:flex-row md:justify-between h-[550px] md:h-[400px] items-center space-y-8 md:space-y-0 md:space-x-14">
+        <Avatar file={file} onFileChange={onFileChange} remove={remove} />
+        <Form onSubmit={onSubmit} alert={alert} onChange={onChange} />
       </div>
-      {/* <button id="remove">Remove Avatar</button>
-          <div className="group2">
-            <div className="left">
-              <h2>Requests</h2>
-              <div className="card1">
-                <div className="links">
-                  <a href="">Disposal</a>
-                  <a href="">Collection</a>
-                  <a href="">Recycle</a>
-                </div>
-                <div className="header">
-                  <p>User</p>
-                  <p>Weight</p>
-                  <p>Distance</p>
-                </div>
-                <div className="items">
-                  <img src={avatar} alt="" />
-                  <p>white lion</p>
-                  <p>2kg</p>
-                  <p>10mins away</p>
-                  <button className="accept">Accept</button>
-                  <button className="decline">Decline</button>
-                </div>
 
-                <div className="items">
-                  <img src={avatar} alt="" />
-                  <p>white lion</p>
-                  <p>2kg</p>
-                  <p>10mins away</p>
-                  <button className="accept">Accept</button>
-                  <button className="decline">Decline</button>
-                </div>
-                <div className="items">
-                  <img src={avatar} alt="" />
-                  <p>white lion</p>
-                  <p>2kg</p>
-                  <p>10mins away</p>
-                  <button className="accept">Accept</button>
-                  <button className="decline">Decline</button>
-                </div>
-                <div className="items">
-                  <img src={avatar} alt="" />
-                  <p>white lion</p>
-                  <p>2kg</p>
-                  <p>10mins away</p>
-                  <button className="accept">Accept</button>
-                  <button className="decline">Decline</button>
-                </div>
-                <div className="items">
-                  <img src={avatar} alt="" />
-                  <p>white lion</p>
-                  <p>2kg</p>
-                  <p>10mins away</p>
-                  <button className="accept">Accept</button>
-                  <button className="decline">Decline</button>
-                </div>
-                <div className="items">
-                  <img src={avatar} alt="" />
-                  <p>white lion</p>
-                  <p>2kg</p>
-                  <p>10mins away</p>
-                  <button className="accept">Accept</button>
-                  <button className="decline">Decline</button>
-                </div>
-                <div className="items">
-                  <img src={avatar} alt="" />
-                  <p>white lion</p>
-                  <p>2kg</p>
-                  <p>10mins away</p>
-                  <button className="accept">Accept</button>
-                  <button className="decline">Decline</button>
-                </div>
-              </div>
-            </div>
-            <div className="right">
-              <h2>Notifications</h2>
-              <div className="card2">
-                <div className="itemgroup">
-                  <h3>Rejected Disposal</h3>
-                  <p>From</p>
-                  <img src={avatar} alt="" />
-                  <p>White lion</p>
-                  <a className="icon">
-                    {" "}
-                    <img src={arrow} alt="arrow" />{" "}
-                  </a>
-                </div>
-                <div className="itemgroup">
-                  <h3>Accepted Recycle</h3>
-                  <p>From</p>
-                  <img src={avatar} alt="" />
-                  <p>White lion</p>
-                  <a className="icon">
-                    {" "}
-                    <img src={arrow} alt="arrow" />{" "}
-                  </a>
-                </div>
-                <div className="itemgroup">
-                  <h3>Accepted Collection</h3>
-                  <p>From</p>
-                  <img src={avatar} alt="" />
-                  <p>White lion</p>
-                  <a className="icon">
-                    {" "}
-                    <img src={arrow} alt="arrow" />{" "}
-                  </a>
-                </div>
-                <div className="itemgroup">
-                  <h3>Accepted Disposal</h3>
-                  <p>From</p>
-                  <img src={avatar} alt="" />
-                  <p>White lion</p>
-                  <a className="icon">
-                    {" "}
-                    <img src={arrow} alt="arrow" />{" "}
-                  </a>
-                </div>
-                <div className="itemgroup">
-                  <h3>Rejected Collection</h3>
-                  <p>From</p>
-                  <img src={avatar} alt="" />
-                  <p>White lion</p>
-                  <a className="icon">
-                    {" "}
-                    <img src={arrow} alt="arrow" />{" "}
-                  </a>
-                </div>
-                <div className="itemgroup">
-                  <h3>Rejected Recycle</h3>
-                  <p>From</p>
-                  <img src={avatar} alt="" />
-                  <p>White lion</p>
-                  <a className="icon">
-                    {" "}
-                    <img src={arrow} alt="arrow" />{" "}
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div> */}
+      <div className="flex flex-col lg:flex-row lg:space-x-8 mb-16 text-left">
+        <div className="relative w-full lg:w-[60%] ">
+          <h2 className="text-2xl font-bold mt-8 mb-8 md:mb-16 ">Requests</h2>
+          <div className="w-full overflow-x-scroll sm:overflow-hidden">
+            <Table user={user} />
+          </div>
+          <Pagination />
+        </div>
+        <div className="w-full md:w-[40%]">
+          <Notifications />
+        </div>
+      </div>
     </div>
   );
 };
