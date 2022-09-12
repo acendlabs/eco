@@ -6,25 +6,57 @@ import avatar from "../images/pictureavatar.png";
 import logolight from "../images/logolight.png";
 import arrow from "../images/arrowdown.png";
 import Modal from "../components/modal/Modal";
+import Alert from "../components/Alert";
+import { type } from "@testing-library/user-event/dist/type";
 
 const Dashboard = () => {
-  const [file, setFile] = useState("");
+  const [file, setFile] = useState({ data: null });
   const [filename, setFilename] = useState("Choose Image");
+  const [user, setUser] = useState({ username: "" });
+  const [alert, setAlert] = useState({});
 
-  const onChange = (e) => {
-    setFile(e.target.files[0]);
+  console.log(alert, user.username, file);
+  const onFileChange = (e) => {
+    setFile({ data: URL.createObjectURL(e.target.files[0]) });
     setFilename(e.target.files[0].name);
   };
 
+  const onChange = (e) => {
+    setUser({ [e.target.name]: e.target.value });
+  };
+
+  const remove = () => {
+    setFile({ data: null });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (user.username === "" || user.username === null) {
+      setAlert({ type: "danger", msg: "Enter all fields" });
+      setTimeout(() => {
+        setAlert({});
+      }, 1000);
+    } else {
+      setAlert({ type: "success", msg: "Success" });
+      setUser({});
+      setTimeout(() => {
+        setAlert({ username: "" });
+      }, 1500);
+    }
+  };
+
   return (
-    <div className="flex flex-col mx-28">
+    <div className="flex flex-col mx-8 md:mx-28">
+      <Alert alert={alert} />
       {/* <img className="w-44 h-44 " src={logolight} alt="" /> */}
       {/* <h2>Dashboard</h2> */}
-      <div className="flex flex-col justify-center md:flex-row md:justify-between h-[380px] md:h-64 items-center space-y-8 md:space-y-0">
-        <div className="relative w-auto bg-gray-600 overflow-visible">
+      <div className="flex flex-col justify-center md:flex-row md:justify-between h-[550px] md:h-[400px] items-center space-y-8 md:space-y-0 md:space-x-14">
+        <div className="relative w-auto space-y-8">
           <img
-            className="rounded-full p-8 border-[5px] border-[#0F2F1D]"
-            src={file ? avatar : file}
+            className={`rounded-full ${
+              !file?.data ? `p-8` : `w-[135px] h-[135px]`
+            } border-[5px] border-[#0F2F1D]`}
+            src={file?.data ?? avatar}
             alt=""
           />
 
@@ -33,7 +65,7 @@ const Dashboard = () => {
             type="file"
             id="file"
             accept="image/*"
-            onChange={onChange}
+            onChange={onFileChange}
           />
           <label
             className="absolute top-0 right-0 cursor-pointer"
@@ -41,19 +73,41 @@ const Dashboard = () => {
           >
             <img className="w-6 h-6" src={addimage} alt="" />
           </label>
+          <button className="font-bold text-lg text-[#2C8C57]" onClick={remove}>
+            Remove avatar
+          </button>
         </div>
-        <form className="md:w-9/12 flex-col bg-slate-500">
-          <div className="w-full  md:w-[32vw] space-y-3 text-[#0F2F1D]">
-            <label className="text-lg font-medium" for="username">
-              Username
+        <form
+          onSubmit={onSubmit}
+          className="md:w-7/12 lg:w-9/12 flex-col space-y-8 text-lg font-medium text-[#0F2F1D]"
+        >
+          <div className="w-[400px] md:w-[32vw] space-y-3 ">
+            <label
+              className={alert.type === "danger" ? "text-red-400" : null}
+              htmlFor="username"
+            >
+              {alert.type === "danger" ? alert.msg : "Username"}
             </label>
             <input
-              className="w-full rounded-lg border-[3px] border-[#0F2F1D] bg-transparent py-3.5 px-8 text-base outline-none"
+              className={`${
+                alert.type === "danger"
+                  ? `border-red-400`
+                  : alert.type === "success"
+                  ? `border-green-400`
+                  : `border-[#0F2F1D]`
+              } w-full rounded-lg font-normal border-[3px]  bg-transparent py-3.5 px-8 text-base outline-none`}
               type="text"
               name="username"
               placeholder="Enter a display name"
+              onChange={onChange}
             />
           </div>
+          <button
+            type="submit"
+            className="bg-[#0F2F1D] text-white py-4 px-6 rounded-lg"
+          >
+            Submit
+          </button>
         </form>
         {/* <button>Become a Recycler</button> */}
       </div>
