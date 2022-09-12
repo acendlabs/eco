@@ -7,7 +7,7 @@ import logolight from "../images/logolight.png";
 import arrow from "../images/arrowdown.png";
 import Modal from "../components/modal/Modal";
 import Alert from "../components/Alert";
-import { type } from "@testing-library/user-event/dist/type";
+import Table from "../components/Table";
 
 const Dashboard = () => {
   const [file, setFile] = useState({ data: null });
@@ -46,15 +46,19 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex flex-col mx-8 md:mx-28">
+    <div className="relative flex flex-col mx-[5%] sm:mx-[10%] md:mx-36">
       <Alert alert={alert} />
-      {/* <img className="w-44 h-44 " src={logolight} alt="" /> */}
-      {/* <h2>Dashboard</h2> */}
+      <img
+        className="w-[40%] h-auto absolute -z-10 left-[50%] -translate-x-2/4 opacity-25"
+        src={logolight}
+        alt=""
+      />
+      <h2 className="text-4xl font-black mt-8 mb-1">Dashboard</h2>
       <div className="flex flex-col justify-center md:flex-row md:justify-between h-[550px] md:h-[400px] items-center space-y-8 md:space-y-0 md:space-x-14">
-        <div className="relative w-auto space-y-8">
+        <div className="relative w-auto md:w-5/12 lg:w-[30%] space-y-8">
           <img
             className={`rounded-full ${
-              !file?.data ? `p-8` : `w-[135px] h-[135px]`
+              !file?.data ? `p-8` : `w-[140px] h-[140px]`
             } border-[5px] border-[#0F2F1D]`}
             src={file?.data ?? avatar}
             alt=""
@@ -68,10 +72,22 @@ const Dashboard = () => {
             onChange={onFileChange}
           />
           <label
-            className="absolute top-0 right-0 cursor-pointer"
+            className="absolute left-[120px] -top-12 cursor-pointer"
             htmlFor="file"
           >
-            <img className="w-6 h-6" src={addimage} alt="" />
+            <h1 className="font-semibold">Change avater</h1>
+            <svg
+              width="26"
+              height="25"
+              viewBox="0 0 22 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.343 19H2.34302V5H11.343V3H2.34302C1.24302 3 0.343018 3.9 0.343018 5V19C0.343018 20.1 1.24302 21 2.34302 21H16.343C17.443 21 18.343 20.1 18.343 19V10H16.343V19ZM8.55302 15.83L6.59302 13.47L3.84302 17H14.843L11.303 12.29L8.55302 15.83ZM18.343 3V0H16.343V3H13.343C13.353 3.01 13.343 5 13.343 5H16.343V7.99C16.353 8 18.343 7.99 18.343 7.99V5H21.343V3H18.343Z"
+                fill="#0F2F1D"
+              />
+            </svg>
           </label>
           <button className="font-bold text-lg text-[#2C8C57]" onClick={remove}>
             Remove avatar
@@ -79,9 +95,9 @@ const Dashboard = () => {
         </div>
         <form
           onSubmit={onSubmit}
-          className="md:w-7/12 lg:w-9/12 flex-col space-y-8 text-lg font-medium text-[#0F2F1D]"
+          className="w-full md:w-7/12 lg:w-[70%] space-y-8 text-lg font-medium text-[#0F2F1D] "
         >
-          <div className="w-[400px] md:w-[32vw] space-y-3 ">
+          <div className=" md:w-[32vw] lg:w-[34vw] space-y-3 ">
             <label
               className={alert.type === "danger" ? "text-red-400" : null}
               htmlFor="username"
@@ -109,148 +125,24 @@ const Dashboard = () => {
             Submit
           </button>
         </form>
-        {/* <button>Become a Recycler</button> */}
       </div>
-      {/* <button id="remove">Remove Avatar</button>
-          <div className="group2">
-            <div className="left">
-              <h2>Requests</h2>
-              <div className="card1">
-                <div className="links">
-                  <a href="">Disposal</a>
-                  <a href="">Collection</a>
-                  <a href="">Recycle</a>
-                </div>
-                <div className="header">
-                  <p>User</p>
-                  <p>Weight</p>
-                  <p>Distance</p>
-                </div>
-                <div className="items">
-                  <img src={avatar} alt="" />
-                  <p>white lion</p>
-                  <p>2kg</p>
-                  <p>10mins away</p>
-                  <button className="accept">Accept</button>
-                  <button className="decline">Decline</button>
-                </div>
 
-                <div className="items">
-                  <img src={avatar} alt="" />
-                  <p>white lion</p>
-                  <p>2kg</p>
-                  <p>10mins away</p>
-                  <button className="accept">Accept</button>
-                  <button className="decline">Decline</button>
-                </div>
-                <div className="items">
-                  <img src={avatar} alt="" />
-                  <p>white lion</p>
-                  <p>2kg</p>
-                  <p>10mins away</p>
-                  <button className="accept">Accept</button>
-                  <button className="decline">Decline</button>
-                </div>
-                <div className="items">
-                  <img src={avatar} alt="" />
-                  <p>white lion</p>
-                  <p>2kg</p>
-                  <p>10mins away</p>
-                  <button className="accept">Accept</button>
-                  <button className="decline">Decline</button>
-                </div>
-                <div className="items">
-                  <img src={avatar} alt="" />
-                  <p>white lion</p>
-                  <p>2kg</p>
-                  <p>10mins away</p>
-                  <button className="accept">Accept</button>
-                  <button className="decline">Decline</button>
-                </div>
-                <div className="items">
-                  <img src={avatar} alt="" />
-                  <p>white lion</p>
-                  <p>2kg</p>
-                  <p>10mins away</p>
-                  <button className="accept">Accept</button>
-                  <button className="decline">Decline</button>
-                </div>
-                <div className="items">
-                  <img src={avatar} alt="" />
-                  <p>white lion</p>
-                  <p>2kg</p>
-                  <p>10mins away</p>
-                  <button className="accept">Accept</button>
-                  <button className="decline">Decline</button>
-                </div>
-              </div>
-            </div>
-            <div className="right">
-              <h2>Notifications</h2>
-              <div className="card2">
-                <div className="itemgroup">
-                  <h3>Rejected Disposal</h3>
-                  <p>From</p>
-                  <img src={avatar} alt="" />
-                  <p>White lion</p>
-                  <a className="icon">
-                    {" "}
-                    <img src={arrow} alt="arrow" />{" "}
-                  </a>
-                </div>
-                <div className="itemgroup">
-                  <h3>Accepted Recycle</h3>
-                  <p>From</p>
-                  <img src={avatar} alt="" />
-                  <p>White lion</p>
-                  <a className="icon">
-                    {" "}
-                    <img src={arrow} alt="arrow" />{" "}
-                  </a>
-                </div>
-                <div className="itemgroup">
-                  <h3>Accepted Collection</h3>
-                  <p>From</p>
-                  <img src={avatar} alt="" />
-                  <p>White lion</p>
-                  <a className="icon">
-                    {" "}
-                    <img src={arrow} alt="arrow" />{" "}
-                  </a>
-                </div>
-                <div className="itemgroup">
-                  <h3>Accepted Disposal</h3>
-                  <p>From</p>
-                  <img src={avatar} alt="" />
-                  <p>White lion</p>
-                  <a className="icon">
-                    {" "}
-                    <img src={arrow} alt="arrow" />{" "}
-                  </a>
-                </div>
-                <div className="itemgroup">
-                  <h3>Rejected Collection</h3>
-                  <p>From</p>
-                  <img src={avatar} alt="" />
-                  <p>White lion</p>
-                  <a className="icon">
-                    {" "}
-                    <img src={arrow} alt="arrow" />{" "}
-                  </a>
-                </div>
-                <div className="itemgroup">
-                  <h3>Rejected Recycle</h3>
-                  <p>From</p>
-                  <img src={avatar} alt="" />
-                  <p>White lion</p>
-                  <a className="icon">
-                    {" "}
-                    <img src={arrow} alt="arrow" />{" "}
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div> */}
+      <div className="flex flex-col md:flex-row md:space-x-8 mb-16 text-left">
+        <div className="relative w-full md:w-[60%] ">
+          <h2 className="text-2xl font-bold mt-8 mb-8 md:mb-16 ">Requests</h2>
+          <div className="overflow-x-scroll">
+            <Table user={user} />
+          </div>
+        </div>
+        <div className="w-full md:w-[40%]">
+          <h2 className="text-2xl font-bold mt-8 mb-8 md:mb-16 space-x-8">
+            Notifications
+          </h2>
+          <div className="w-full h-auto p-16 rounded-xl bg-[#EFF6F2]">
+            <h1>available requests</h1>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
