@@ -13,6 +13,7 @@ const Dashboard = () => {
   const [filename, setFilename] = useState("Choose Image");
   const [user, setUser] = useState({ username: "" });
   const [alert, setAlert] = useState({});
+  console.log(filename);
 
   console.log(alert, user.username, file);
   const onFileChange = (e) => {
@@ -45,7 +46,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="relative flex flex-col mx-[5%] sm:mx-[10%] md:mx-36">
+    <div className="relative flex flex-col mx-[5%] sm:mx-[8%] md:mx-[10] ">
       <Alert alert={alert} />
       <img
         className="w-[40%] h-auto absolute -z-10 left-[50%] -translate-x-2/4 opacity-25"
@@ -61,7 +62,7 @@ const Dashboard = () => {
       <div className="flex flex-col lg:flex-row lg:space-x-8 mb-16 text-left">
         <div className="relative w-full lg:w-[60%] ">
           <h2 className="text-2xl font-bold mt-8 mb-8 md:mb-16 ">Requests</h2>
-          <div className="overflow-hidden">
+          <div className="w-full overflow-x-scroll sm:overflow-hidden">
             <Table user={user} />
           </div>
           <Pagination />

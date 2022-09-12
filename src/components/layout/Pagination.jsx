@@ -1,7 +1,7 @@
 import React from "react";
 
 const Pagination = () => {
-  const onSelect = (e) => null;
+  // const onSelect = (e) => null;
   return (
     <div className="flex justify-center h-24 items-center text-xs md:text-base">
       {/* <div>showing 1 - 5</div> */}

@@ -15,22 +15,22 @@ const Table = ({ user }) => {
   };
 
   return (
-    <div className="p-8 md:p-16 rounded-xl bg-[#EFF6F2]">
+    <div className="p-8 md:p-16 rounded-xl bg-[#EFF6F2] w-max sm:w-full ">
       <Alert alert={alert} />
       <div>
-        <table className="w-full border-collapse table-auto text-sm font-normal">
-          <thead className="">
+        <table className="w-full border-collapse table-auto sm:table-fixed text-sm font-normal">
+          <thead>
             <tr>
-              <th className="border-b dark:border-slate-600 font-medium p-4 md:pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">
+              <th className="border-b font-medium py-4 pr-8 pt-0 pb-3 text-slate-400 text-left">
                 User
               </th>
-              <th className="border-b dark:border-slate-600 font-medium p-4 md:pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">
+              <th className="border-b font-medium py-4 pr-8 pt-0 pb-3 text-slate-400 text-left">
                 Weight
               </th>
-              <th className="border-b dark:border-slate-600 font-medium p-4 md:pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">
+              <th className="border-b font-medium py-4 pr-8 pt-0 pb-3 text-slate-400 text-left">
                 Distance
               </th>
-              <th className="border-b dark:border-slate-600 font-medium p-4 md:pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">
+              <th className="border-b font-medium py-4 pr-8 pt-0 pb-3 text-slate-400 text-left">
                 Action
               </th>
             </tr>
@@ -39,22 +39,24 @@ const Table = ({ user }) => {
             return (
               <tbody key={i} className="bg-transparent">
                 <tr>
-                  <td className="border-b border-slate-100 dark:border-slate-700 p-4 md:pl-8 text-slate-500 dark:text-slate-400">
-                    <img
-                      className="p-2.5 rounded-full border-[3px] border-[#0F2F1D] w-12 h-12"
-                      src={avatar}
-                      alt=""
-                    />
+                  <td className="border-b border-slate-100 py-4 pr-8 text-slate-500">
+                    <div className="w-12 h-12">
+                      <img
+                        className="p-2.5 rounded-full border-[3px] border-[#0F2F1D] w-12 h-12"
+                        src={avatar}
+                        alt=""
+                      />
+                    </div>
                   </td>
-                  <td className="border-b border-slate-100 dark:border-slate-700 p-4 md:pl-8 text-slate-500 dark:text-slate-400">
+                  <td className="border-b border-slate-100 py-4 pr-8 text-slate-500">
                     {item?.Weight}
                   </td>
-                  <td className="border-b border-slate-100 dark:border-slate-700 p-4 md:pl-8 text-slate-500 dark:text-slate-400">
+                  <td className="border-b border-slate-100 py-4 pr-8 text-slate-500">
                     {item?.Distance}
                   </td>
-                  <td className="border-b border-slate-100 dark:border-slate-700 p-4 md:pl-8 text-slate-500 dark:text-slate-400">
+                  <td className="border-b border-slate-100 py-4 pr-8 text-slate-500">
                     <button
-                      className="bg-[#0F2F1D] text-white py-4 px-6 rounded-lg"
+                      className="bg-[#0F2F1D] text-white py-4 px-5 rounded-lg"
                       onClick={sendRequest}
                     >
                       Request
