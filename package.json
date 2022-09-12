@@ -49,6 +49,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.8",
     "gh": "^2.8.9",
+    "netlify-cli": "^11.7.1",
     "pages": "^0.0.16",
     "postcss": "^8.4.16",
     "react-router-dom": "^6.3.0",
