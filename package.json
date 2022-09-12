@@ -45,6 +45,8 @@
   "devDependencies": {
     "autoprefixer": "^10.4.8",
     "gh": "^2.8.9",
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "hardhat": "^2.11.1",
     "pages": "^0.0.16",
     "postcss": "^8.4.16",
     "react-router-dom": "^6.3.0",
