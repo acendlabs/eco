@@ -46,7 +46,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="relative flex flex-col mx-[5%] sm:mx-[8%] md:mx-[10] ">
+    <div className="relative flex flex-col container">
       <Alert alert={alert} />
       <img
         className="w-[40%] h-auto absolute -z-10 left-[50%] -translate-x-2/4 opacity-25"
