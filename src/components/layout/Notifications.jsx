@@ -12,7 +12,7 @@ const Notifications = () => {
           return (
             <div
               key={i}
-              className="flex justify-between items-center bg-white rounded-2xl py-4 px-4"
+              className="flex justify-between items-center bg-white rounded-2xl py-4 px-4 sm:px-8"
             >
               <h2 className="font-medium text-xs sm:text-sm xl:text-base">
                 Rejected{" "}

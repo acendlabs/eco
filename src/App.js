@@ -8,18 +8,16 @@ import Dashboard from "./pages/dashboard";
 function App() {
   return (
     <BrowserRouter>
-      <div className="">
-        <Header />
-        <Routes>
-          {/* <Route path='/' element= {<Home/>} />
+      <Header />
+      <Routes>
+        {/* <Route path='/' element= {<Home/>} />
         <Route path='wallet' element ={<Wallet/>} />
         <Route path='*' element = { <h2>oops nothing here</h2>} />
         <Route path='dispose' element = {<Dispose/>}/> */}
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          {/* <Route path='collect' element={<Collect />} /> */}
-        </Routes>
-      </div>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        {/* <Route path='collect' element={<Collect />} /> */}
+      </Routes>
     </BrowserRouter>
   );
 }

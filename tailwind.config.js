@@ -4,10 +4,11 @@ module.exports = {
   theme: {
     container: {
       padding: {
-        DEFAULT: "0%",
-        sm: "0%",
-        md: "0%",
-        xl: "0%",
+        DEFAULT: "5%",
+        sm: "8%",
+        md: "5%",
+        lg: "5%",
+        xl: "5%%",
       },
       center: true,
     },

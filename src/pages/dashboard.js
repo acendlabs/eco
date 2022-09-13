@@ -59,15 +59,15 @@ const Dashboard = () => {
         <Form onSubmit={onSubmit} alert={alert} onChange={onChange} />
       </div>
 
-      <div className="flex flex-col lg:flex-row lg:space-x-8 mb-16 text-left">
-        <div className="relative w-full lg:w-[60%] ">
+      <div className="flex flex-col xl:flex-row xl:space-x-8 mb-16 text-left">
+        <div className="relative w-full xl:w-[60%] ">
           <h2 className="text-2xl font-bold mt-8 mb-8 md:mb-16 ">Requests</h2>
           <div className="w-full overflow-x-scroll sm:overflow-hidden">
             <Table user={user} />
           </div>
           <Pagination />
         </div>
-        <div className="w-full lg:w-[40%]">
+        <div className="w-full xl:w-[40%]">
           <Notifications />
         </div>
       </div>
