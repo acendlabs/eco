@@ -1,7 +1,6 @@
 {
   "name": "acend-eco",
   "version": "0.1.0",
-  "homepage": "osmos-finance.github.io/eco",
   "private": true,
   "dependencies": {
     "@formkit/auto-animate": "^1.0.0-beta.3",
@@ -23,10 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "client": "npm start ",
-    "clientinstall": "npm instail",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
