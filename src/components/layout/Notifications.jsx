@@ -3,20 +3,26 @@ import { notifications } from "../data/Data";
 
 const Notifications = () => {
   return (
-    <div>
+    <div className="w-full">
       <h2 className="text-2xl font-bold mt-8 mb-8 md:mb-16 space-x-8">
         Notifications
       </h2>
-      <div className="w-full h-auto p-2 md:px-8 pt-8 pb-20 rounded-xl bg-[#EFF6F2] space-y-4">
+      <div className="w-full h-auto p-2 md:px-8 pt-8 pb-16 rounded-xl bg-[#EFF6F2] space-y-4">
         {notifications.map((item, i) => {
           return (
             <div
               key={i}
               className="flex justify-between items-center bg-white rounded-2xl py-4 px-4"
             >
-              <h2 className="font-medium text-xs sm:text-base">Rejected </h2>
-              <h2 className="font-medium text-xs sm:text-base">Disposal</h2>
-              <p className="font-normal text-xs sm:text-base">from</p>
+              <h2 className="font-medium text-xs sm:text-sm xl:text-base">
+                Rejected{" "}
+              </h2>
+              <h2 className="font-medium text-xs sm:text-sm xl:text-base">
+                Disposal
+              </h2>
+              <p className="font-normal text-xs sm:text-sm xl:text-base">
+                from
+              </p>
               <div>
                 <img
                   className="bg-acend-theme-dark w-8 h-8 sm:w-11 sm:h-11 rounded-full"
@@ -24,7 +30,9 @@ const Notifications = () => {
                   alt="avatar"
                 />
               </div>
-              <p className="font-normal text-xs sm:text-base">White Lion</p>
+              <p className="font-normal text-xs sm:text-sm xl:text-base">
+                White Lion
+              </p>
               <div>
                 <svg
                   fill="none"

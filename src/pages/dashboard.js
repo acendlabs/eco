@@ -67,7 +67,7 @@ const Dashboard = () => {
           </div>
           <Pagination />
         </div>
-        <div className="w-full md:w-[40%]">
+        <div className="w-full lg:w-[40%]">
           <Notifications />
         </div>
       </div>
