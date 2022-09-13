@@ -13,7 +13,7 @@ const Dashboard = () => {
   const [filename, setFilename] = useState("Choose Image");
   const [user, setUser] = useState({ username: "" });
   const [alert, setAlert] = useState({});
-  console.log(filename);
+  // console.log(filename);
 
   console.log(alert, user.username, file);
   const onFileChange = (e) => {
