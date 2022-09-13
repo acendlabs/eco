@@ -63,3 +63,17 @@ export const recyclerMenu = [
     link: "wallet",
   },
 ];
+export const notifications = [
+  {
+    name: "Dashboard",
+    link: "dashboard",
+  },
+  {
+    name: "Recycle",
+    link: "recycle",
+  },
+  {
+    name: "Wallet",
+    link: "wallet",
+  },
+];
