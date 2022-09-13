@@ -1,9 +1,9 @@
 {
   "name": "acend-eco",
   "version": "0.1.0",
-  "homepage": "osmos-finance.github.io/eco",
   "private": true,
   "dependencies": {
+    "@formkit/auto-animate": "^1.0.0-beta.3",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
@@ -45,6 +45,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.8",
     "gh": "^2.8.9",
+    "netlify-cli": "^11.7.1",
     "pages": "^0.0.16",
     "postcss": "^8.4.16",
     "react-router-dom": "^6.3.0",

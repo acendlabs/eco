@@ -15,7 +15,8 @@ function App() {
         <Route path='wallet' element ={<Wallet/>} />
         <Route path='*' element = { <h2>oops nothing here</h2>} />
         <Route path='dispose' element = {<Dispose/>}/> */}
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           {/* <Route path='collect' element={<Collect />} /> */}
         </Routes>
       </div>
