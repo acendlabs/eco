@@ -104,7 +104,7 @@ const Header = () => {
         <ul className="hidden sm:flex justify-between space-x-8">
           {disposerMenu.map((item, i) => {
             return (
-              <li onClick={openMenu} k ey={i}>
+              <li key={i}>
                 <NavLink to={`/${item.link}`}>{item.name}</NavLink>
               </li>
             );
