@@ -9,213 +9,115 @@ body{
 
 
 .rewardtop{
-  text-align: center;
-  justify-content: center;
   background: #E7F2EC;
-  margin-top: -27px;
-  padding-bottom: 50px;
+ 
 }
-.rewardtop h1{
+.rewardtop h1, .rewardtop p{
   font-family: 'Jost', sans-serif;
-font-style: normal;
-font-weight: 700;
-font-size: 34px;
-line-height: 49px;
-padding-top: 70px;
-color: #222222;
+  color: #222222;
 
 }
-.rewardtop p{
-  font-family: 'Jost', sans-serif;
-font-style: normal;
-font-weight: 300;
-font-size: 16px;
-line-height: 23px;
 
-color: #222222;
-
-}
 .rewardtop button{
-  width: 150px;
-height: 45px;
-cursor: pointer;
 background: #0F2F1D;
-border-radius: 5px;
 font-family: 'Jost', sans-serif;
-font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 26px;
 color: #FFFFFF;
 }
 .rewardtop button:hover{
   color: #0F2F1D;
   background: #FFFFFF;
 }
-.rewardtop .left{
-  width: 516px;
-  margin-top: 80px;
-  margin-left: 70px;
-  font-family: 'Jost', sans-serif;
 
-}
 .rewardtop .left h3{
-  font-style: normal;
-font-weight: 300;
-font-size: 16px;
-line-height: 23px;
-text-align: justify;
-
 color: #222222;
 }
-.rewardtop .right{
-  position: absolute;
-width: 400px;
-height: 379.8px;
-left: 890px;
-top: 160px
-}
+
 .rewardbottom{
-  background: #CFE5D9;
-  margin-top: -20px;
-  padding-left: 70px;
-  padding-top: 50px;
-  padding-bottom: 30px;
-  
+  background: #CFE5D9;  
 }
 .rewardbottom h1{
-  font-family: 'Jost', sans-serif;
-font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 26px;
 color: #222222;
+/* font-weight: 500;
+font-size: 18px; */
+@apply text-lg;
+@apply font-medium;
+@apply sm:font-medium;
+@apply md:text-xl;
+@apply md:font-semibold;
 
 }
-.rewardbottom .leftright{
-  display: flex;
-  justify-content: space-between;
-}
-.rewardbottom .leftright .left{
-  flex-direction: column;
-}
+
+
 .rewardbottom img{
-  height: 200px;
-  margin-right: 10px;
+  @apply mr-4;
+  @apply h-20;
+  @apply sm:h-24;
+  @apply md:h-36;
+  
 }
 .imggroup1, .imggroup2, .imggroup3{
-  display: flex;
+  @apply flex;
 }
 .rewardbottom p{
-  font-family: 'Jost', sans-serif;
-  font-style: normal;
-font-weight: 300;
-font-size: 16px;
-line-height: 23px;
-width: 400px;
-color: #222222;
+  color: #222222;
+  @apply font-light;
+  @apply text-sm;
+  @apply md:font-light;
+  @apply md:text-lg;
+
 }
-.rewardbottom .right{
-  margin-right: 60px;
-}
-.rewardbottom .bottom{
-  margin-left: 25%;
-  margin-top: 40px;
-}
-.bgimg{
-  position: absolute;
- width: 300px;
- height: 300px;
- opacity: 30%;
- margin-left: 35vw;
- top: 20px;
-}
+
+
 .technology{
-  position: relative;
-  background: #2C8C57;
-  margin-top:-20px;
-  padding-left: 70px;
-  
+  background: #2C8C57;  
 }
 
 .technology h1{
-  padding-top: 50px;
-  font-style: normal;
-font-weight: 600;
-font-size: 22px;
-line-height: 32px;
-text-align: center;
+  
 color: #FFFFFF;
 
 }
-.technology .group1{
-  display: flex;
-  
-  justify-content: space-between;
-}
+
 .technology .group1 p{
-  width: 500px;
-  padding-right: 50px;
-  font-weight: 300;
-font-size: 16px;
-line-height: 23px;
+@apply text-sm;
+@apply font-light;
+@apply mt-4;
+@apply md:font-normal;
+@apply md:text-lg;
 color: #FFFFFF;
 }
 .technology  h3{
-  margin-top: 50px;
-  font-weight: 500;
-font-size: 18px;
-line-height: 26px;
 color: #FFFFFF;
 }
-.technology .group2{
-  display: flex;
-  
-}
-.technology .group2 .left img{
-  margin-left: 25%;
-  height: 70px;
-  width: 70px;
-}
+
+
 .technology .group2 .left h2{
-  font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 26px;
+
 color: #FFFFFF;
 }
 .technology .group2 .right{
-  width: 930px;
-  margin-left: 30px;
-  font-weight: 500;
-font-size: 16px;
-line-height: 26px;
+
 color: #FFFFFF;
 }
-.about{
-  padding-left: 70px;
-  padding-right: 50px;
-}
+
 .about h2{
-  text-align: center;
-  font-style: normal;
-font-weight: 600;
-font-size: 22px;
-line-height: 32px;
+ 
 color: #222222;
-margin-top: 50px;
+
 
 }
 .about p{
-  font-style: normal;
-font-weight: 300;
-font-size: 16px;
-line-height: 23px;
-text-align: justify;
+@apply mt-4;
+@apply text-sm;
+@apply font-light;
+@apply md:text-lg;
 
 color: #222222;
 
 }
 .about h3{
-  margin-top: 40px;
+  @apply mt-4;
+  @apply font-normal;
+  @apply sm:font-medium;
+  @apply text-lg;
 }
