@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = ({ onSubmit, alert, onChange }) => {
+const Form = ({ onSubmit, alert, onChange, user }) => {
   return (
     <form
       onSubmit={onSubmit}
@@ -14,6 +14,7 @@ const Form = ({ onSubmit, alert, onChange }) => {
           {alert.type === "danger" ? alert.msg : "Username"}
         </label>
         <input
+          value={user.username}
           className={`${
             alert.type === "danger"
               ? `border-red-400`

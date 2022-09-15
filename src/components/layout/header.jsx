@@ -80,7 +80,7 @@ const Header = () => {
           </li>
         </ul>
 
-        <Link to="/dashboard" className="flex items-end space-x-2">
+        <Link to="/" className="flex items-end space-x-2">
           <img className="w-12" src={acendlogo} alt="acendlogo" />
           <p>AcendEco</p>
         </Link>

@@ -15,7 +15,7 @@ const Dashboard = () => {
   const [alert, setAlert] = useState({});
   // console.log(filename);
 
-  console.log(alert, user.username, file);
+  // console.log(alert, user.username, file);
   const onFileChange = (e) => {
     setFile({ data: URL.createObjectURL(e.target.files[0]) });
     setFilename(e.target.files[0].name);
@@ -38,7 +38,7 @@ const Dashboard = () => {
       }, 1000);
     } else {
       setAlert({ type: "success", msg: "Success" });
-      setUser({});
+      setUser({ username: "" });
       setTimeout(() => {
         setAlert({});
       }, 1500);
@@ -56,12 +56,17 @@ const Dashboard = () => {
       <h2 className="text-4xl font-black mt-8 mb-1">Dashboard</h2>
       <div className="flex flex-col justify-center md:flex-row md:justify-between h-[550px] md:h-[400px] items-center space-y-8 md:space-y-0 md:space-x-14">
         <Avatar file={file} onFileChange={onFileChange} remove={remove} />
-        <Form onSubmit={onSubmit} alert={alert} onChange={onChange} />
+        <Form
+          onSubmit={onSubmit}
+          alert={alert}
+          onChange={onChange}
+          user={user}
+        />
       </div>
 
       <div className="flex flex-col xl:flex-row xl:space-x-8 mb-16 text-left">
         <div className="relative w-full xl:w-[60%] ">
-          <h2 className="text-2xl font-bold mt-8 mb-8 md:mb-16 ">Requests</h2>
+          <h2 className="text-2xl font-bold mt-8 mb-8 md:mb-16 ">Activities</h2>
           <div className="w-full overflow-x-scroll sm:overflow-hidden">
             <Table user={user} />
           </div>
