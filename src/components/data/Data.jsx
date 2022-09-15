@@ -2,21 +2,18 @@
 export const requests = [
   {
     user: "Jay",
-    Weight: "Distance",
+    Weight: "16kg",
     Distance: "17km",
-    Action: "",
   },
   {
-    user: "Jay",
-    Weight: "Distance",
-    Distance: "17km",
-    Action: "",
+    user: "Washinton",
+    Weight: "20kg",
+    Distance: "5km",
   },
   {
-    user: "Jay",
-    Weight: "Distance",
-    Distance: "17km",
-    Action: "",
+    user: "Adams",
+    Weight: "16kg",
+    Distance: "11km",
   },
 ];
 
