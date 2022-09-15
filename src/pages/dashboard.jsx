@@ -7,9 +7,11 @@ import Notifications from "../components/layout/Notifications";
 import Avatar from "../components/layout/Avatar";
 import Form from "../components/Forms/Form";
 import Pagination from "../components/layout/Pagination";
+import Title from "../components/layout/Title";
 
 const Dashboard = () => {
   const [file, setFile] = useState({ data: null });
+  // eslint-disable-next-line
   const [filename, setFilename] = useState("Choose Image");
   const [user, setUser] = useState({ username: "" });
   const [alert, setAlert] = useState({});
@@ -46,14 +48,14 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="relative flex flex-col container">
+    <div className="relative flex flex-col container py-8">
       <Alert alert={alert} />
       <img
         className="w-[40%] h-auto absolute -z-10 left-[50%] -translate-x-2/4 opacity-25"
         src={logolight}
         alt=""
       />
-      <h2 className="text-4xl font-black mt-8 mb-1">Dashboard</h2>
+      <Title title="Dashboard" />
       <div className="flex flex-col justify-center md:flex-row md:justify-between h-[550px] md:h-[400px] items-center space-y-8 md:space-y-0 md:space-x-14">
         <Avatar file={file} onFileChange={onFileChange} remove={remove} />
         <Form
