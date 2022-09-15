@@ -3,97 +3,34 @@ import "./dispose.css";
 import avatar from "../images/pictureavatar.png";
 import logolight from "../images/logolight.png";
 import search from "../images/search.png";
+import SearchForm from "../components/Forms/SearchForm";
+
 function Dispose() {
   return (
-    <div className="bggroup">
-      <img className="bgimg" src={logolight} alt="" />
-
-      <div className="dispose">
-        <h2>Dispose</h2>
-        <div className="inputgroup">
-          <input
-            type="text"
-            placeholder="Search for a display name, weight or distance"
-          />
-          <button className="searchbtn">
-            {" "}
-            Search
-            <img src={search} alt="" />{" "}
-          </button>
-        </div>
-        <div className="pool">
-          <h3>Avaible Collectors in pool</h3>
-          <button>Join pool</button>
-        </div>
-        <div className="itemgroup">
-          <div className="headers">
-            <h3>User</h3>
-            <h3>Max.Weight</h3>
-            <h3>Min.Weight</h3>
-            <h3>Distance</h3>
-          </div>
-          <div className="item">
-            <div className="imggroup">
-              <img src={avatar} alt="" />
-              <p>white lion</p>
-            </div>
-            <p>5kg</p>
-            <p>2kg</p>
-            <p>10mins away</p>
-            <button>Request</button>
-          </div>
-          <div className="item">
-            <div className="imggroup">
-              <img src={avatar} alt="" />
-              <p>white lion</p>
-            </div>
-            <p>5kg</p>
-            <p>2kg</p>
-            <p>10mins away</p>
-            <button>Request</button>
-          </div>
-          <div className="item">
-            <div className="imggroup">
-              <img src={avatar} alt="" />
-              <p>white lion</p>
-            </div>
-            <p>5kg</p>
-            <p>2kg</p>
-            <p>10mins away</p>
-            <button>Request</button>
-          </div>
-          <div className="item">
-            <div className="imggroup">
-              <img src={avatar} alt="" />
-              <p>white lion</p>
-            </div>
-            <p>5kg</p>
-            <p>2kg</p>
-            <p>10mins away</p>
-            <button>Request</button>
-          </div>
-          <div className="item">
-            <div className="imggroup">
-              <img src={avatar} alt="" />
-              <p>white lion</p>
-            </div>
-            <p>5kg</p>
-            <p>2kg</p>
-            <p>10mins away</p>
-            <button>Request</button>
-          </div>
-          <div className="item">
-            <div className="imggroup">
-              <img src={avatar} alt="" />
-              <p>white lion</p>
-            </div>
-            <p>5kg</p>
-            <p>2kg</p>
-            <p>10mins away</p>
-            <button>Request</button>
-          </div>
-        </div>
+    <div className="relative flex flex-col container">
+      {/* <Alert alert={alert} /> */}
+      <img
+        className="w-[40%] h-auto absolute -z-10 left-[50%] -translate-x-2/4 opacity-25"
+        src={logolight}
+        alt=""
+      />
+      <h2 className="text-4xl font-black mt-8 mb-1">Dispose</h2>
+      <div className="flex flex-col justify-center md:flex-row md:justify-between h-[550px] md:h-[400px] items-center space-y-8 md:space-y-0 md:space-x-14">
+        <SearchForm />
       </div>
+
+      {/* <div className="flex flex-col xl:flex-row xl:space-x-8 mb-16 text-left">
+        <div className="relative w-full xl:w-[60%] ">
+          <h2 className="text-2xl font-bold mt-8 mb-8 md:mb-16 ">Activities</h2>
+          <div className="w-full overflow-x-scroll sm:overflow-hidden">
+            <Table user={user} />
+          </div>
+          <Pagination />
+        </div>
+        <div className="w-full xl:w-[40%]">
+          <Notifications />
+        </div>
+      </div> */}
     </div>
   );
 }

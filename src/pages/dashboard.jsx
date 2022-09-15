@@ -15,7 +15,7 @@ const Dashboard = () => {
   const [alert, setAlert] = useState({});
   // console.log(filename);
 
-  console.log(alert, user.username, file);
+  // console.log(alert, user.username, file);
   const onFileChange = (e) => {
     setFile({ data: URL.createObjectURL(e.target.files[0]) });
     setFilename(e.target.files[0].name);
