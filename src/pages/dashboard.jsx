@@ -11,6 +11,7 @@ import Title from "../components/layout/Title";
 
 const Dashboard = () => {
   const [file, setFile] = useState({ data: null });
+  const [pool, setPool] = useState([]);
   // eslint-disable-next-line
   const [filename, setFilename] = useState("Choose Image");
   const [user, setUser] = useState({ username: "" });
@@ -70,7 +71,7 @@ const Dashboard = () => {
         <div className="relative w-full xl:w-[60%] ">
           <h2 className="text-2xl font-bold mt-8 mb-8 md:mb-16 ">Activities</h2>
           <div className="w-full overflow-x-scroll sm:overflow-hidden">
-            <Table user={user} />
+            <Table user={user} pool={pool} />
           </div>
           <Pagination />
         </div>
