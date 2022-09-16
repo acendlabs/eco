@@ -1,8 +1,9 @@
 import React from "react";
 import { requests } from "../data/Data";
 
-const JoinPool = ({ setPool, pool }) => {
+const JoinPool = ({ setPool, pool, openMenu }) => {
   const joinPool = () => {
+    openMenu();
     setPool([
       ...pool,
       {
