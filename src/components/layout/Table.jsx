@@ -43,16 +43,16 @@ const Table = ({ user, pool }) => {
                 className="bg-transparent text-acend-theme-dark font-semibold "
               >
                 <tr>
-                  <td className="border-b border-slate-100 py-4 pr-8 ">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-12 h-12">
-                        <img
-                          className="p-2.5 rounded-full border-[3px] border-[#0F2F1D] w-12 h-12"
-                          src={avatar}
-                          alt=""
-                        />
-                      </div>
-                      <h2 className="text-base">{item?.user}</h2>
+                  <td className="border-b border-slate-100 py-4 pr-8 overflow-hidden">
+                    <div className="flex items-center space-x-2">
+                      <img
+                        className="p-2.5 rounded-full border-[3px] border-[#0F2F1D] w-12 h-12"
+                        src={avatar}
+                        alt="user avatar"
+                      />
+                      <h2 className="wr md:text-base">
+                        {item?.user.split(" ")[0]}
+                      </h2>
                     </div>
                   </td>
                   <td className="border-b border-slate-100 py-4 pr-8">

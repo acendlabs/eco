@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Dispose.css";
 import logolight from "../images/logolight.png";
 import SearchForm from "../components/Forms/SearchForm";
 import Title from "../components/layout/Title";
@@ -7,8 +6,11 @@ import Table from "../components/layout/Table";
 import Pagination from "../components/layout/Pagination";
 import JoinPool from "../components/layout/JoinPool";
 import Weight from "../components/modal/Weight";
+import "./Collect.css";
+// import avatar from "../images/pictureavatar.png";
+// import search from "../images/search.png";
 
-function Dispose({ isOpen, openMenu }) {
+function Collect({ isOpen, openMenu }) {
   const [pool, setPool] = useState([]);
 
   return (
@@ -19,7 +21,7 @@ function Dispose({ isOpen, openMenu }) {
         src={logolight}
         alt=""
       />
-      <Title title="Dispose" />
+      <Title title="Collect" />
       {/* <div className="flex flex-col justify-center md:flex-row md:justify-between py-16 items-center space-y-8 md:space-y-0 md:space-x-14"></div> */}
 
       <div className="flex justify-center">
@@ -30,16 +32,16 @@ function Dispose({ isOpen, openMenu }) {
           <div className="text-left">
             <JoinPool setPool={setPool} pool={pool} openMenu={openMenu} />
           </div>
-          <div className="w-full overflow-x-scroll sm:overflow-hidden">
+          <div className="w-full overflow-x-scroll sm:overflow-hidden scrollbar-hide">
             <Table user={`user`} pool={pool} />
           </div>
           <Pagination />
         </div>
         {/* <div className="w-full xl:w-[40%]">
-          <Notifications />
-        </div> */}
+        <Notifications />
+      </div> */}
       </div>
     </div>
   );
 }
-export default Dispose;
+export default Collect;

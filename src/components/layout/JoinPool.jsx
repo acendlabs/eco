@@ -1,8 +1,9 @@
 import React from "react";
 import { requests } from "../data/Data";
 
-const JoinPool = ({ setPool, pool }) => {
+const JoinPool = ({ setPool, pool, openMenu }) => {
   const joinPool = () => {
+    openMenu();
     setPool([
       ...pool,
       {
@@ -13,7 +14,7 @@ const JoinPool = ({ setPool, pool }) => {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row sm:items-center md:space-x-8 py-8">
+    <div className="flex flex-col sm:flex-row sm:items-center space-x-4 md:space-x-8 py-8">
       <h2 className="md:text-2xl font-bold py-8 ">
         Available collectors in pool
       </h2>
