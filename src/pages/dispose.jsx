@@ -7,9 +7,21 @@ import Table from "../components/layout/Table";
 import Pagination from "../components/layout/Pagination";
 import JoinPool from "../components/layout/JoinPool";
 import Weight from "../components/modal/Weight";
+// import { useRef } from "react";
 
 function Dispose({ isOpen, openMenu }) {
   const [pool, setPool] = useState([]);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const openMenu = () => {
+  //   setIsOpen(!isOpen);
+  //   console.log(isOpen);
+  // };
+
+  // const modalRef = useRef();
+
+  // const onClk = (e) => {
+  //   if (modalRef.current === e.target) setIsOpen(false);
+  // };
 
   return (
     <div className="relative flex flex-col container py-8">
