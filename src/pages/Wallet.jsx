@@ -13,7 +13,7 @@ function Wallet() {
         To use AcendEco you need to be connected to a wallet supported by the
         polygon chain
       </p>
-      <div className="rounded-lg bg-acend-25 p-8 space-y-2 w-full sm:w-[60%]">
+      <div className="rounded-lg bg-acend-25 p-8 space-y-2 w-full sm:w-[512px]">
         <div className="flex items-center bg-white py-4 px-8 space-x-4 font-medium cursor-pointer rounded text-sm">
           <span>Metamask</span>
           <img className="w-8 h-8" src={meta_mask} alt="meta_mask_icon" />
