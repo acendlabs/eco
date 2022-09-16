@@ -7,9 +7,9 @@ import bitcoinhunting from "../images/BitcoinHunting.png";
 import polygon from "../images/polygon.png";
 import group from "../images/Group.png";
 import logolight from "../images/logolight.png";
-import Footer from "../components/footer";
+import Footer from "../components/layout/Footer";
 
-import "./home.css";
+import "./Home.css";
 
 function Home() {
   return (
@@ -17,13 +17,17 @@ function Home() {
       <body className="overflow-x-hidden">
         <section className="rewardtop  justify-center pb-10">
           <div className="top text-center">
-            <h1 className="pt-10 text-2xl font-semibold sm:text-3xl md:text-4xl md:font-bold ">Get Rewarded for your Trash </h1>
+            <h1 className="pt-10 text-2xl font-semibold sm:text-3xl md:text-4xl md:font-bold ">
+              Get Rewarded for your Trash{" "}
+            </h1>
             <p className="font-light  px-5 text-sm sm:text-lg sm:text-center md:text-xl lg:w-3/5  lg:container ">
               We are using technology to control the disposal of plastic waste,
-              giving value  to the plastic waste by incentives given to
-              disposers and collectors.
+              giving value to the plastic waste by incentives given to disposers
+              and collectors.
             </p>
-            <button className="mt-4 w-24  p-1 h-7 text-xs sm:text-lg  sm:w-35 sm:h-8 md:text-xl md:w-40 md:h-10 rounded ">Get Started</button>
+            <button className="mt-4 w-24  p-1 h-7 text-xs sm:text-lg  sm:w-35 sm:h-8 md:text-xl md:w-40 md:h-10 rounded ">
+              Get Started
+            </button>
           </div>
           <div className="left px-5 sm:w-[60%] mt-10 md:ml-5 lg:ml-10">
             <h3 className="font-light text-sm mt-64 sm:text-lg md:text-xl sm:mt-0">
@@ -83,8 +87,14 @@ function Home() {
         </section>
         <section className="technology p-5 md:p-10">
           <div className="bg">
-            <img className=" w-[20%] h-auto absolute  left-[50%] -translate-x-2/4 opacity-30" src={logolight} alt="" />
-            <h1 className="text-lg font-medium sm:text-xl md:text-2xl text-center md:font-bold">Why use a Blockchain/Decentralized Ledger Technology?</h1>
+            <img
+              className=" w-[20%] h-auto absolute  left-[50%] -translate-x-2/4 opacity-30"
+              src={logolight}
+              alt=""
+            />
+            <h1 className="text-lg font-medium sm:text-xl md:text-2xl text-center md:font-bold">
+              Why use a Blockchain/Decentralized Ledger Technology?
+            </h1>
             <div className="group1 flex justify-between flex-col md:flex-row md:gap-16 lg:gap-36">
               <p>
                 The ability to store information on the chain. Blockchain uses
@@ -98,14 +108,22 @@ function Home() {
                 data on the blockchain so that it will not be tampered with.
               </p>
             </div>
-            <h3 className="mt-10 font-normal md:font-medium text-lg">What Chain is AcendEco Built On and Why</h3>
+            <h3 className="mt-10 font-normal md:font-medium text-lg">
+              What Chain is AcendEco Built On and Why
+            </h3>
             <div className="group2 flex">
               <div className="left">
-                <img className="ml-4 h-10 sm:h-16 sm:ml-0 md:ml-5 lg:ml-10" src={polygon} alt="polygon logo" />
-                <h2 className="font-normal text-sm md:font-semibold md:text-xl">POLYGON CHAIN</h2>
+                <img
+                  className="ml-4 h-10 sm:h-16 sm:ml-0 md:ml-5 lg:ml-10"
+                  src={polygon}
+                  alt="polygon logo"
+                />
+                <h2 className="font-normal text-sm md:font-semibold md:text-xl">
+                  POLYGON CHAIN
+                </h2>
               </div>
               <div className="right text-sm sm:mt-3 md:text-lg ml-4">
-                <p >
+                <p>
                   <b>Scalability:</b> It matches our goal and scalability plans
                   in the future with its scaling solutions.
                 </p>
@@ -122,8 +140,10 @@ function Home() {
             </div>
           </div>
         </section>
-        <section className="about p-5 md:p-10" >
-          <h2 className="text-center text-lg font-medium sm:font-semibold sm:text-xl md:text-2xl md:font-bold">About AcendEco</h2>
+        <section className="about p-5 md:p-10">
+          <h2 className="text-center text-lg font-medium sm:font-semibold sm:text-xl md:text-2xl md:font-bold">
+            About AcendEco
+          </h2>
           <p>
             AcendEco is a decentralized application based deployment system
             which allows for the quick onboarding of collection resources and

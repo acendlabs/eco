@@ -1,12 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Weight = ({ openMenu }) => {
-  const [weight, setWeight] = useState("");
-
-  const onChange = (e) => {
-    setWeight(e.target.value);
-  };
-
+const MaxMin = ({ openMenu }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     openMenu();
@@ -39,25 +33,29 @@ const Weight = ({ openMenu }) => {
           <h3 className="mb-4 text-base font-medium text-acend-theme-dark dark:text-white">
             Enter weight of plastic in Kg
           </h3>
-          <form onSubmit={onSubmit} className="space-y-4 py-4 px-[20%]">
-            <div
-              className={`flex items-center border-[#0F2F1D] w-full rounded-lg font-normal border-[3px]  bg-transparent py-3.5 px-8 text-base outline-none`}
-            >
+          <form onSubmit={onSubmit} className="space-y-4 py-4">
+            <div className="flex items-center space-x-4 px-8">
               <input
-                className="w-full outline-none pr-2"
-                value={weight}
+                // value={user.username}
+                className={` border-[#0F2F1D] w-full rounded-lg font-normal border-[3px]  bg-transparent py-3.5 px-4 text-base outline-none`}
                 type="number"
                 name="username"
-                placeholder="Enter weight"
-                onChange={onChange}
+                placeholder="Min weight"
+                // onChange={onChange}
               />
-              <span>Kg</span>
+              <input
+                // value={user.username}
+                className={` border-[#0F2F1D] w-full rounded-lg font-normal border-[3px]  bg-transparent py-3.5 px-4 text-base outline-none`}
+                type="number"
+                name="username"
+                placeholder="Max weight"
+                // onChange={onChange}
+              />
             </div>
-            <div></div>
 
             <button
               type="submit"
-              className="bg-[#0F2F1D] w-full text-white py-4 px-4 sm:px-6 rounded-lg focus:outline-none"
+              className="bg-[#0F2F1D] w-full text-white py-4 px-6 rounded-lg focus:outline-none"
             >
               Add to pool
             </button>
@@ -68,4 +66,4 @@ const Weight = ({ openMenu }) => {
   );
 };
 
-export default Weight;
+export default MaxMin;

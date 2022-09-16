@@ -2,22 +2,21 @@
 // import profile from "../images/Vectorprofile.png";
 // import wallet from "../images/Vectorwallet.png";
 import acendlogo from "../../images/acendlogo.png";
-import "./header.css";
-
+import "./Header.css";
 import { useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { disposerMenu } from "../data/Data";
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+
+const Header = ({ connect }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const openMenu = () => {
-    setIsOpen(!isOpen);
-    console.log(isOpen);
+    setMenuOpen(!menuOpen);
   };
 
   const modalRef = useRef();
 
   const onClk = (e) => {
-    if (modalRef.current === e.target) setIsOpen(false);
+    if (modalRef.current === e.target) setMenuOpen(false);
   };
 
   return (
@@ -26,18 +25,22 @@ const Header = () => {
         ref={modalRef}
         onClick={onClk}
         className={`${
-          isOpen ? null : `hidden`
+          menuOpen ? null : `hidden`
         } transition-opacity duration-300  absolute z-10 bg-black opacity-60 h-full w-full ease-in`}
       ></div>
 
       <ul
         className={`${
-          isOpen ? null : `hidden`
+          menuOpen ? null : `hidden`
         } rounded-xl absolute z-10 top-0 pl-4 p-4 py-8 text-sm w-[70%] bg-acend-theme-dark flex flex-col sm:hidden justify-between space-y-8`}
       >
         <li className="p-4 border-slate-100">
           <div className="flex justify-between items-center">
-            <Link className="cursor-pointer space-y-3" to="/dashboard">
+            <Link
+              onClick={setMenuOpen}
+              className="cursor-pointer space-y-3"
+              to="/dashboard"
+            >
               <img className="w-12" src={acendlogo} alt="acendlogo" />
               <p>AcendEco</p>
             </Link>
@@ -104,7 +107,7 @@ const Header = () => {
         <ul className="hidden sm:flex justify-between space-x-8">
           {disposerMenu.map((item, i) => {
             return (
-              <li key={i}>
+              <li key={i} onClick={() => connect(item)}>
                 <NavLink to={`/${item.link}`}>{item.name}</NavLink>
               </li>
             );
