@@ -1,0 +1,35 @@
+footer{
+    
+    background: #0F2F1D;
+    
+  }
+  footer .group{
+   
+    @apply flex;
+    @apply flex-col;
+  }
+  footer .group a{
+  text-decoration: none;
+  color: #FFFFFF;
+  @apply font-light;
+  @apply text-sm;
+  @apply mt-5;
+  @apply md:text-lg;
+  @apply md:font-light;
+  @apply lg:font-medium;
+  
+  }
+
+  footer .group a:hover{
+    text-decoration: underline;
+  }
+  footer .logogroup h2{
+   
+  font-family: 'Work Sans', sans-serif;
+  color: #FFFFFF;
+  text-decoration: none;
+  @apply md:text-lg;
+  @apply lg:font-medium;
+  
+  }
+  

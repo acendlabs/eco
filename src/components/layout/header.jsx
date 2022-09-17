@@ -1,42 +1,48 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 // import profile from "../images/Vectorprofile.png";
 // import wallet from "../images/Vectorwallet.png";
-// import acendlogo from "../images/acendlogo.png";
-
+import acendlogo from "../../images/acendlogo.png";
+import "./Header.css";
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+import { Link, NavLink } from "react-router-dom";
+import { disposerMenu } from "../data/Data";
+
+const Header = ({ connect }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const openMenu = () => {
-    setIsOpen(!isOpen);
-    console.log(isOpen);
+    setMenuOpen(!menuOpen);
   };
 
   const modalRef = useRef();
 
   const onClk = (e) => {
-    if (modalRef.current === e.target) setIsOpen(false);
+    if (modalRef.current === e.target) setMenuOpen(false);
   };
 
   return (
-    <header className="flex flex-col text-white bg-acend-theme-dark">
+    <header className="flex flex-col text-white bg-acend-theme-dark text-sm font-normal">
       <div
         ref={modalRef}
         onClick={onClk}
         className={`${
-          isOpen ? null : `hidden`
+          menuOpen ? null : `hidden`
         } transition-opacity duration-300  absolute z-10 bg-black opacity-60 h-full w-full ease-in`}
       ></div>
 
       <ul
         className={`${
-          isOpen ? null : `hidden`
-        } absolute z-10 top-0 pl-4 p-4 py-8 text-sm w-[70%] bg-acend-theme-dark flex flex-col sm:hidden justify-between space-y-8`}
+          menuOpen ? null : `hidden`
+        } rounded-xl absolute z-10 top-0 pl-4 p-4 py-8 text-sm w-[70%] bg-acend-theme-dark flex flex-col sm:hidden justify-between space-y-8`}
       >
         <li className="p-4 border-slate-100">
           <div className="flex justify-between items-center">
-            <Link className="cursor-pointer" to="/dispose">
-              LOGO
+            <Link
+              onClick={setMenuOpen}
+              className="cursor-pointer space-y-3"
+              to="/dashboard"
+            >
+              <img className="w-12" src={acendlogo} alt="acendlogo" />
+              <p>AcendEco</p>
             </Link>
             <svg
               onClick={openMenu}
@@ -54,22 +60,19 @@ const Header = () => {
             </svg>
           </div>
         </li>
-        <li className=" pb-2 pl-4 border-slate-100">
-          <Link to="/dispose">Dispose</Link>
-        </li>
-        <li className=" pb-2 pl-4 border-slate-100">
-          <Link to="/collect">Collect</Link>
-        </li>
-        <li className="pb-2 pl-4 border-slate-100">
-          <Link to="#">Recycle</Link>
-        </li>
-        <li className=" pb-2 pl-4 border-slate-100">
-          <Link to="/dashboard">Dashboard</Link>
-        </li>
-        <li className=" pb-2 pl-4 border-slate-100">
-          <Link to="/wallet">Wallet</Link>
-        </li>
+        {disposerMenu.map((item, i) => {
+          return (
+            <li
+              onClick={openMenu}
+              key={i}
+              className="pb-2 pl-4 border-slate-100"
+            >
+              <NavLink to={`/${item.link}`}>{item.name}</NavLink>
+            </li>
+          );
+        })}
       </ul>
+
       <nav className="flex justify-between h-[100px] items-center container">
         <ul className="hidden lg:flex justify-between space-x-8">
           <li>
@@ -79,10 +82,12 @@ const Header = () => {
             <a href="#">FAQ</a>
           </li>
         </ul>
-        <Link to="/" className="acendlogo">
-          {/* <img src={acendlogo} alt="acendlogo" /> */}
+
+        <Link to="/" className="flex items-end space-x-2">
+          <img className="w-12" src={acendlogo} alt="acendlogo" />
           <p>AcendEco</p>
         </Link>
+
         <div className="flex sm:hidden cursor-pointer" onClick={openMenu}>
           <svg
             fill="none"
@@ -98,28 +103,15 @@ const Header = () => {
             />
           </svg>
         </div>
+
         <ul className="hidden sm:flex justify-between space-x-8">
-          <li>
-            <a href="/dispose">Dispose</a>
-          </li>
-          <li>
-            <a href="/collect">Collect</a>
-          </li>
-          <li>
-            <a href="#">Recycle</a>
-          </li>
-          <li>
-            <a href="/dashboard">
-              {/* <img src={profile} alt="" /> */}
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a href="/wallet">
-              {/* <img src={wallet} alt="" /> */}
-              Wallet
-            </a>
-          </li>
+          {disposerMenu.map((item, i) => {
+            return (
+              <li key={i} onClick={() => connect(item)}>
+                <NavLink to={`/${item.link}`}>{item.name}</NavLink>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </header>

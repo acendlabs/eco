@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import avatar from "../../images/pictureavatar.png";
 import { requests } from "../data/Data";
 import Alert from "./Alert";
+import NotAvailable from "./NotAvailable";
+import "./Table.css";
 
-const Table = ({ user }) => {
+const Table = ({ user, pool }) => {
   const [alert, setAlert] = useState({});
 
   const sendRequest = () => {
-    console.log("sent");
     setAlert({ type: "success", msg: "Request Sent!" });
     setTimeout(() => {
       setAlert({});
@@ -19,42 +20,48 @@ const Table = ({ user }) => {
       <Alert alert={alert} />
       <div>
         <table className="w-full border-collapse table-auto sm:table-fixed text-sm font-normal">
-          <thead>
+          <thead className="text-black text-base">
             <tr>
-              <th className="border-b font-medium py-4 pr-8 pt-0 pb-3 text-slate-400 text-left">
+              <th className="border-b font-light py-4 pr-8 pt-0 pb-3 text-left">
                 User
               </th>
-              <th className="border-b font-medium py-4 pr-8 pt-0 pb-3 text-slate-400 text-left">
+              <th className="border-b font-light py-4 pr-8 pt-0 pb-3 text-left">
                 Weight
               </th>
-              <th className="border-b font-medium py-4 pr-8 pt-0 pb-3 text-slate-400 text-left">
+              <th className="border-b font-light py-4 pr-8 pt-0 pb-3 text-left">
                 Distance
               </th>
-              <th className="border-b font-medium py-4 pr-8 pt-0 pb-3 text-slate-400 text-left">
+              <th className="border-b font-light py-4 pr-8 pt-0 pb-3 text-left">
                 Action
               </th>
             </tr>
           </thead>
           {requests.map((item, i) => {
-            return (
-              <tbody key={i} className="bg-transparent">
+            return pool.length === 0 ? null : (
+              <tbody
+                key={i}
+                className="bg-transparent text-acend-theme-dark font-semibold "
+              >
                 <tr>
-                  <td className="border-b border-slate-100 py-4 pr-8 text-slate-500">
-                    <div className="w-12 h-12">
+                  <td className="border-b border-slate-100 py-4 pr-8 overflow-hidden">
+                    <div className="flex items-center space-x-2">
                       <img
                         className="p-2.5 rounded-full border-[3px] border-[#0F2F1D] w-12 h-12"
                         src={avatar}
-                        alt=""
+                        alt="user avatar"
                       />
+                      <h2 className="wr md:text-base">
+                        {item?.user.split(" ")[0]}
+                      </h2>
                     </div>
                   </td>
-                  <td className="border-b border-slate-100 py-4 pr-8 text-slate-500">
+                  <td className="border-b border-slate-100 py-4 pr-8">
                     {item?.Weight}
                   </td>
-                  <td className="border-b border-slate-100 py-4 pr-8 text-slate-500">
+                  <td className="border-b border-slate-100 py-4 pr-8">
                     {item?.Distance}
                   </td>
-                  <td className="border-b border-slate-100 py-4 pr-8 text-slate-500">
+                  <td className="border-b border-slate-100 py-4 pr-8">
                     <button
                       className="bg-[#0F2F1D] text-white py-4 px-5 rounded-lg"
                       onClick={sendRequest}
@@ -68,7 +75,7 @@ const Table = ({ user }) => {
           })}
         </table>
       </div>
-      {!user.username ? null : ""}
+      {pool.length === 0 ? <NotAvailable /> : null}
     </div>
   );
 };

@@ -1,22 +1,75 @@
+import { useRef, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Home from './pages/home';
-// import Wallet from './pages/wallet';
-import Header from "./components/layout/header";
-// import Dispose from './pages/dispose';
+import Home from "./pages/Home";
+import Header from "./components/layout/Header";
+import Dispose from "./pages/Dispose";
 import Dashboard from "./pages/dashboard";
-// import Collect from './pages/collect';
+import Collect from "./pages/Collect";
+import Error from "./pages/Error";
+import Recycle from "./pages/Recycle";
+import ChooseIdentity from "./pages/ChooseIdentity";
+import ConnectWallet from "./components/modal/ConnectWallet";
+import Wallet from "./pages/Wallet";
+
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+
+  const connect = (item) => {
+    if (item?.link === "wallet") {
+      // setOpenModal(!openModal);
+    }
+  };
+
+  const openMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const modalRef = useRef();
+
+  const onClk = (e) => {
+    if (modalRef.current === e.target) setIsOpen(false);
+  };
+
   return (
     <BrowserRouter>
-      <div className="">
-        <Header />
+      <div
+        className={`${
+          isOpen || openModal ? `overflow-hidden` : `overflow-visible`
+        } h-screen`}
+      >
+        <div
+          ref={modalRef}
+          onClick={onClk}
+          className={`${
+            isOpen || openModal ? null : `hidden`
+          } transition-opacity duration-300  absolute z-10 bg-black opacity-60 h-full w-full ease-in`}
+        ></div>
+        {openModal ? (
+          <ConnectWallet openModal={openModal} setOpenModal={setOpenModal} />
+        ) : null}
+        <Header connect={connect} />
+
         <Routes>
-          {/* <Route path='/' element= {<Home/>} />
-        <Route path='wallet' element ={<Wallet/>} />
-        <Route path='*' element = { <h2>oops nothing here</h2>} />
-        <Route path='dispose' element = {<Dispose/>}/> */}
+          <Route path="wallet" element={<Wallet />} />
+
+          <Route path="/" element={<Home />} />
+          <Route path="choose-identity" element={<ChooseIdentity />} />
           <Route path="dashboard" element={<Dashboard />} />
-          {/* <Route path='collect' element={<Collect />} /> */}
+          <Route
+            index
+            path="dispose"
+            element={<Dispose isOpen={isOpen} openMenu={openMenu} />}
+          />
+          <Route
+            path="collect"
+            element={<Collect isOpen={isOpen} openMenu={openMenu} />}
+          />
+          <Route
+            path="recycle"
+            element={<Recycle isOpen={isOpen} openMenu={openMenu} />}
+          />
+          <Route path="*" element={<Error />} />
         </Routes>
       </div>
     </BrowserRouter>

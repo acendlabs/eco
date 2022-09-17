@@ -6,8 +6,9 @@ module.exports = {
       padding: {
         DEFAULT: "5%",
         sm: "8%",
-        md: "10",
-        xl: "2rem",
+        md: "5%",
+        lg: "5%",
+        xl: "5%%",
       },
       center: true,
     },
@@ -22,5 +23,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
