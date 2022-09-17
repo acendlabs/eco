@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Form from "../components/Forms/Form";
 import Avatar from "../components/layout/Avatar";
 import Notifications from "../components/layout/Notifications";
@@ -25,8 +26,11 @@ const ChooseIdentity = () => {
 
   const onChange = () => {};
 
+  const redirect = useNavigate();
+
   const onSubmit = (e) => {
     e.preventDefault();
+    redirect("/dashboard");
   };
 
   return (
@@ -41,7 +45,10 @@ const ChooseIdentity = () => {
       <div className="flex flex-col mx-auto w-full sm:w-[90%]  xl:w-[60%] md:flex-row py-16 items-start space-y-8 md:space-y-0 md:space-x-14">
         <Avatar file={file} onFileChange={onFileChange} remove={remove} />
 
-        <form className="space-y-4 sm:space-y-8 w-full sm:w-[70%]">
+        <form
+          onSubmit={onSubmit}
+          className="space-y-4 sm:space-y-8 w-full sm:w-[70%]"
+        >
           <div className="space-y-4 w-full sm:w-96">
             <label
               className={`${
@@ -186,7 +193,7 @@ const ChooseIdentity = () => {
           </div>
           <button
             type="submit"
-            className="w-32 bg-[#0F2F1D] text-white py-4 px-6 rounded-lg"
+            className="opacity-95 transition ease-in hover:opacity-100 w-32 bg-[#0F2F1D] text-white py-4 px-6 rounded-lg"
           >
             Submit
           </button>

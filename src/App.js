@@ -7,7 +7,7 @@ import Dashboard from "./pages/dashboard";
 import Collect from "./pages/Collect";
 import Error from "./pages/Error";
 import Recycle from "./pages/Recycle";
-import ChooseIdentity from "./pages/ChooseIdentity";
+import Register from "./pages/Register";
 import ConnectWallet from "./components/modal/ConnectWallet";
 import Wallet from "./pages/Wallet";
 
@@ -54,7 +54,7 @@ function App() {
           <Route path="wallet" element={<Wallet />} />
 
           <Route path="/" element={<Home />} />
-          <Route path="choose-identity" element={<ChooseIdentity />} />
+          <Route path="register" element={<Register />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route
             index
