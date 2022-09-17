@@ -4,6 +4,7 @@ import meta_mask from "../images/meta_mask.svg";
 import wallet_connect from "../images/wallet_connect.svg";
 import coin_base from "../images/coin_base.svg";
 import trust_wallet from "../images/trust_wallet.svg";
+import { Link } from "react-router-dom";
 
 function Wallet() {
   return (
@@ -14,26 +15,38 @@ function Wallet() {
         polygon chain
       </p>
       <div className="rounded-lg bg-acend-25 p-8 space-y-2 w-full sm:w-[512px]">
-        <div className="flex items-center bg-white py-4 px-8 space-x-4 font-medium cursor-pointer rounded text-sm">
+        <Link
+          to="/register"
+          className="flex items-center bg-white py-4 px-8 space-x-4 font-medium cursor-pointer rounded text-sm"
+        >
           <span>Metamask</span>
           <img className="w-8 h-8" src={meta_mask} alt="meta_mask_icon" />
-        </div>
-        <div className="flex items-center bg-white py-4 px-8 space-x-4 font-medium cursor-pointer rounded text-sm">
+        </Link>
+        <Link
+          to="/register"
+          className="flex items-center bg-white py-4 px-8 space-x-4 font-medium cursor-pointer rounded text-sm"
+        >
           <span>Wallet Connect</span>
           <img
             className="w-8 h-8"
             src={wallet_connect}
             alt="wallet_connect_icon"
           />
-        </div>
-        <div className="flex items-center bg-white py-4 px-8 space-x-4 font-medium cursor-pointer rounded text-sm">
+        </Link>
+        <Link
+          to="/register"
+          className="flex items-center bg-white py-4 px-8 space-x-4 font-medium cursor-pointer rounded text-sm"
+        >
           <span>Coinbase</span>
           <img className="w-8 h-8" src={coin_base} alt="coin_base_icon" />
-        </div>
-        <div className="flex items-center bg-white py-4 px-8 space-x-4 font-medium cursor-pointer rounded text-sm">
+        </Link>
+        <Link
+          to="/register"
+          className="flex items-center bg-white py-4 px-8 space-x-4 font-medium cursor-pointer rounded text-sm"
+        >
           <span>Trust Wallet</span>
           <img className="w-8 h-8" src={trust_wallet} alt="trust_wallet_icon" />
-        </div>
+        </Link>
       </div>
     </div>
   );
