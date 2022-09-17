@@ -14,7 +14,7 @@ const ChooseIdentity = () => {
   const [filename, setFilename] = useState("Choose Image");
   const [user, setUser] = useState({
     username: "",
-    phone: "",
+    phone: "+234",
     role: "",
     company_name: "",
     website: "",
@@ -37,7 +37,27 @@ const ChooseIdentity = () => {
   };
 
   const onChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+    if (e.target.name === "phone") {
+      const formattedPhone = formatPhone(e.target.value);
+      setUser({ ...user, phone: formattedPhone });
+    } else {
+      setUser({ ...user, [e.target.name]: e.target.value });
+    }
+  };
+
+  const formatPhone = (value) => {
+    if (!value) return value;
+    const phoneN = value.replace(/[^\d]/g, "");
+    const phoneNlen = phoneN.length;
+    console.log(phoneNlen);
+    if (phoneNlen < 4) return phoneN;
+    if (phoneNlen < 16) {
+      return `(+${phoneN.slice(0, 3)}) ${phoneN.slice(3, 14)}`;
+    }
+    // return `(${phoneN.slice(0, 3)}) ${phoneN.slice(3, 6)}-${phoneN.slice(
+    //   6,
+    //   11
+    // )}`;
   };
 
   console.log("user", user);
@@ -110,7 +130,7 @@ const ChooseIdentity = () => {
               {alert.type === "danger" ? alert.msg : "Phone number*"}
             </label>
             <input
-              value={phone.trim().split}
+              value={phone}
               className={`border-[#0F2F1D]
            w-full rounded-lg font-normal border-[3px]  bg-transparent py-3.5 px-8 text-base outline-none`}
               type="phone"
