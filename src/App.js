@@ -3,23 +3,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Header from "./components/layout/Header";
 import Dispose from "./pages/Dispose";
-<<<<<<< HEAD
 import Dashboard from "./pages/Dashboard";
 import Collect from "./pages/Collect";
 import Error from "./pages/Error";
 import Recycle from "./pages/Recycle";
 import Register from "./pages/Register";
-=======
-import Dashboard from "./pages/dashboard";
-import Collect from "./pages/Collect";
-import Error from "./pages/Error";
-import Recycle from "./pages/Recycle";
-<<<<<<< HEAD
-import ChooseIdentity from "./pages/ChooseIdentity";
->>>>>>> 3ffa0d6 (wallet)
-=======
-import Register from "./pages/Register";
->>>>>>> ae12eaf (update register comp/page)
 import ConnectWallet from "./components/modal/ConnectWallet";
 import Wallet from "./pages/Wallet";
 
@@ -66,15 +54,7 @@ function App() {
           <Route path="wallet" element={<Wallet />} />
 
           <Route path="/" element={<Home />} />
-<<<<<<< HEAD
-<<<<<<< HEAD
           <Route path="register" element={<Register />} />
-=======
-          <Route path="choose-identity" element={<ChooseIdentity />} />
->>>>>>> 3ffa0d6 (wallet)
-=======
-          <Route path="register" element={<Register />} />
->>>>>>> ae12eaf (update register comp/page)
           <Route path="dashboard" element={<Dashboard />} />
           <Route
             index
