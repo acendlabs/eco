@@ -1,17 +1,29 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Form from "../components/Forms/Form";
 import Avatar from "../components/layout/Avatar";
-import Notifications from "../components/layout/Notifications";
-import Pagination from "../components/layout/Pagination";
 import Title from "../components/layout/Title";
 import logolight from "../images/logolight.png";
+import "./Register.css";
+
+// import PhoneInput from "react-phone-input-2";
+// import "react-phone-input-2/lib/style.css";
 
 const ChooseIdentity = () => {
   const [file, setFile] = useState({ data: null });
   // eslint-disable-next-line
   const [filename, setFilename] = useState("Choose Image");
-  const [user, setUser] = useState({ username: "" });
+  const [user, setUser] = useState({
+    username: "",
+    phone: "",
+    role: "",
+    company_name: "",
+    website: "",
+    address: "",
+  });
+
+  //distructuring user details
+  const { username, phone, role, company_name, website, address } = user;
+
   const [alert, setAlert] = useState({});
 
   // console.log(alert, user.username, file);
@@ -24,13 +36,32 @@ const ChooseIdentity = () => {
     setFile({ data: null });
   };
 
-  const onChange = () => {};
+  const onChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  console.log("user", user);
 
   const redirect = useNavigate();
 
   const onSubmit = (e) => {
     e.preventDefault();
-    redirect("/dashboard");
+    if (
+      username === "" ||
+      phone === "" ||
+      role === "" ||
+      company_name === "" ||
+      website === "" ||
+      address === ""
+    ) {
+      setAlert({ type: "danger", msg: "Enter all fields" });
+      setTimeout(() => {
+        setAlert({});
+      }, 1000);
+    } else {
+      setUser({});
+      redirect("/dashboard");
+    }
   };
 
   return (
@@ -59,13 +90,14 @@ const ChooseIdentity = () => {
               {alert.type === "danger" ? alert.msg : "Username*"}
             </label>
             <input
-              // value={user.username}
+              value={username?.trim()}
               className={`border-[#0F2F1D]
            w-full rounded-lg font-normal border-[3px]  bg-transparent py-3.5 px-8 text-base outline-none`}
               type="text"
               name="username"
               placeholder="Enter a display name"
               onChange={onChange}
+              required
             />
           </div>
           <div className="space-y-4 w-full sm:w-96">
@@ -78,25 +110,28 @@ const ChooseIdentity = () => {
               {alert.type === "danger" ? alert.msg : "Phone number*"}
             </label>
             <input
-              // value={user.username}
+              value={phone.trim().split}
               className={`border-[#0F2F1D]
            w-full rounded-lg font-normal border-[3px]  bg-transparent py-3.5 px-8 text-base outline-none`}
               type="phone"
               name="phone"
               placeholder="Enter a phone number"
               onChange={onChange}
+              required
             />
           </div>
+          <h2 className="text-sm sm:text-base font-medium">Pick Role*</h2>
           <div class="flex items-center mb-4">
             <input
-              id="default-radio-1"
+              required
+              onChange={onChange}
               type="radio"
-              value=""
-              name="default-radio"
+              value="disposer"
+              name="role"
               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 "
             />
             <label
-              for="default-radio-1"
+              htmlFor="role"
               class="ml-2 text-sm font-medium text-acend-theme-dark dark:text-gray-300"
             >
               Disposer
@@ -104,31 +139,29 @@ const ChooseIdentity = () => {
           </div>
           <div class="flex items-center">
             <input
-              checked
-              id="default-radio-2"
+              onChange={onChange}
               type="radio"
-              value=""
-              name="default-radio"
+              value="collector"
+              name="role"
               class="w-4 h-4 text-acend-theme-dark bg-gray-100 border-gray-300 "
             />
             <label
-              for="default-radio-2"
+              htmlFor="role"
               class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
               Collectors
             </label>
-          </div>{" "}
+          </div>
           <div class="flex items-center">
             <input
-              checked
-              id="default-radio-3"
+              onChange={onChange}
               type="radio"
-              value=""
-              name="default-radio"
+              value="recycler"
+              name="role"
               class="w-4 h-4 bg-gray-100 border-gray-300 "
             />
             <label
-              for="default-radio-3"
+              htmlFor="role"
               class="ml-2 text-sm font-medium text-acend-theme-dark "
             >
               Recycler
@@ -139,18 +172,19 @@ const ChooseIdentity = () => {
               className={`${
                 alert.type === "danger" ? "text-red-400" : null
               } font-medium text-base`}
-              htmlFor="company-name"
+              htmlFor="company_name"
             >
               {alert.type === "danger" ? alert.msg : "Company name*"}
             </label>
             <input
-              // value={user.username}
+              value={company_name}
               className={`border-[#0F2F1D]
            w-full rounded-lg font-normal border-[3px]  bg-transparent py-3.5 px-8 text-base outline-none`}
               type="text"
-              name="company-name"
+              name="company_name"
               placeholder="Company name"
               onChange={onChange}
+              required
             />
           </div>
           <div className="space-y-4 w-full sm:w-96">
@@ -163,13 +197,14 @@ const ChooseIdentity = () => {
               {alert.type === "danger" ? alert.msg : "Website"}
             </label>
             <input
-              // value={user.username}
+              value={website?.trim()}
               className={`border-[#0F2F1D]
            w-full rounded-lg font-normal border-[3px]  bg-transparent py-3.5 px-8 text-base outline-none`}
               type="text"
               name="website"
               placeholder="Company website"
               onChange={onChange}
+              required
             />
           </div>
           <div className="space-y-4 w-full sm:w-96">
@@ -182,13 +217,14 @@ const ChooseIdentity = () => {
               {alert.type === "danger" ? alert.msg : "Address*"}
             </label>
             <input
-              // value={user.username}
+              value={address}
               className={`border-[#0F2F1D]
            w-full rounded-lg font-normal border-[3px]  bg-transparent py-3.5 px-8 text-base outline-none`}
               type="text"
               name="address"
               placeholder="Address"
               onChange={onChange}
+              required
             />
           </div>
           <button
