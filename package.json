@@ -1,6 +1,6 @@
 {
   "name": "acend-eco",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@formkit/auto-animate": "^1.0.0-beta.3",
@@ -18,7 +18,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "netlify build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -43,12 +43,12 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.8",
-    "gh": "^2.8.9",
-    "netlify-cli": "^11.7.1",
     "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "@openzeppelin/contracts": "^4.7.3",
+    "autoprefixer": "^10.4.8",
     "hardhat": "^2.11.1",
-    "pages": "^0.0.16",
+    "hardhat-deploy": "^0.11.15",
+    "netlify-cli": "^11.8.0",
     "postcss": "^8.4.16",
     "react-router-dom": "^6.3.0",
     "tailwindcss": "^3.1.8"
