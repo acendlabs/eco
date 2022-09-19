@@ -1,6 +1,6 @@
 .react-tel-input .form-control {
   position: relative;
-  /* font-size: 14px; */
+  font-size: 14px;
   /* letter-spacing: 0.01rem; */
   /* margin-top: 0 !important; */
   /* margin-bottom: 0 !important; */
@@ -14,8 +14,8 @@
   /* width: 300px; */
   outline: none;
 
-  @apply border-[#0F2F1D]
-  w-full rounded-lg font-normal border-[3px] bg-transparent py-3.5 px-8 text-base outline-none;
+  /* @apply border-[#0F2F1D]
+  w-full rounded-lg font-normal border-[3px] bg-transparent py-3.5 px-8 text-base outline-none; */
 }
 
 .react-tel-input.dropdownStyle {
