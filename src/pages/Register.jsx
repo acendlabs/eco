@@ -96,15 +96,10 @@ const ChooseIdentity = () => {
       <div className="flex flex-col mx-auto w-full sm:w-[90%]  xl:w-[60%] md:flex-row py-16 items-start space-y-8 md:space-y-0 md:space-x-14">
         <Avatar file={file} onFileChange={onFileChange} remove={remove} />
 
-        <form
-          onSubmit={onSubmit}
-          className="space-y-4 sm:space-y-8 w-full sm:w-[70%]"
-        >
+        <form onSubmit={onSubmit} className="space-y-4 sm:space-y-8 w-full sm:w-[70%]">
           <div className="space-y-4 w-full sm:w-96">
             <label
-              className={`${
-                alert.type === "danger" ? "text-red-400" : null
-              } font-medium text-base`}
+              className={`${alert.type === "danger" ? "text-red-400" : null} font-medium text-base`}
               htmlFor="username"
             >
               {alert.type === "danger" ? alert.msg : "Username*"}
@@ -122,9 +117,7 @@ const ChooseIdentity = () => {
           </div>
           <div className="space-y-4 w-full sm:w-96">
             <label
-              className={`${
-                alert.type === "danger" ? "text-red-400" : null
-              } font-medium text-base`}
+              className={`${alert.type === "danger" ? "text-red-400" : null} font-medium text-base`}
               htmlFor="phone"
             >
               {alert.type === "danger" ? alert.msg : "Phone number*"}
@@ -141,57 +134,52 @@ const ChooseIdentity = () => {
             />
           </div>
           <h2 className="text-sm sm:text-base font-medium">Pick Role*</h2>
-          <div class="flex items-center mb-4">
+          <div className="flex items-center mb-4">
             <input
               required
               onChange={onChange}
               type="radio"
               value="disposer"
               name="role"
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 "
+              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 "
             />
             <label
               htmlFor="role"
-              class="ml-2 text-sm font-medium text-acend-theme-dark dark:text-gray-300"
+              className="ml-2 text-sm font-medium text-acend-theme-dark dark:text-gray-300"
             >
               Disposer
             </label>
           </div>
-          <div class="flex items-center">
+          <div className="flex items-center">
             <input
               onChange={onChange}
               type="radio"
               value="collector"
               name="role"
-              class="w-4 h-4 text-acend-theme-dark bg-gray-100 border-gray-300 "
+              className="w-4 h-4 text-acend-theme-dark bg-gray-100 border-gray-300 "
             />
             <label
               htmlFor="role"
-              class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
               Collectors
             </label>
           </div>
-          <div class="flex items-center">
+          <div className="flex items-center">
             <input
               onChange={onChange}
               type="radio"
               value="recycler"
               name="role"
-              class="w-4 h-4 bg-gray-100 border-gray-300 "
+              className="w-4 h-4 bg-gray-100 border-gray-300 "
             />
-            <label
-              htmlFor="role"
-              class="ml-2 text-sm font-medium text-acend-theme-dark "
-            >
+            <label htmlFor="role" className="ml-2 text-sm font-medium text-acend-theme-dark ">
               Recycler
             </label>
           </div>
           <div className="space-y-4 w-full sm:w-96">
             <label
-              className={`${
-                alert.type === "danger" ? "text-red-400" : null
-              } font-medium text-base`}
+              className={`${alert.type === "danger" ? "text-red-400" : null} font-medium text-base`}
               htmlFor="company_name"
             >
               {alert.type === "danger" ? alert.msg : "Company name*"}
@@ -209,9 +197,7 @@ const ChooseIdentity = () => {
           </div>
           <div className="space-y-4 w-full sm:w-96">
             <label
-              className={`${
-                alert.type === "danger" ? "text-red-400" : null
-              } font-medium text-base`}
+              className={`${alert.type === "danger" ? "text-red-400" : null} font-medium text-base`}
               htmlFor="website"
             >
               {alert.type === "danger" ? alert.msg : "Website"}
@@ -229,9 +215,7 @@ const ChooseIdentity = () => {
           </div>
           <div className="space-y-4 w-full sm:w-96">
             <label
-              className={`${
-                alert.type === "danger" ? "text-red-400" : null
-              } font-medium text-base`}
+              className={`${alert.type === "danger" ? "text-red-400" : null} font-medium text-base`}
               htmlFor="address"
             >
               {alert.type === "danger" ? alert.msg : "Address*"}

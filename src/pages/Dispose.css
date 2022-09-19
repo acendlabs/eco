@@ -1,0 +1,21 @@
+.dispose{
+    padding-left: 70px;
+    position: absolute;
+    top: 90px;
+}
+.dispose h2{
+    text-align: start;
+}
+.dispose img{
+    height: 50px;
+}
+
+.dispose .itemgroup{
+    width: 700px;
+    height: 400px;
+    background: #EFF6F2;
+    border-radius: 10px;
+    margin-left: 35%;
+    margin-bottom: 70px;
+    margin-top: 45px;
+}

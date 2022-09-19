@@ -1,6 +1,6 @@
 {
   "name": "acend-eco",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@formkit/auto-animate": "^1.0.0-beta.3",
@@ -10,15 +10,18 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.27.2",
+    "ethers": "^5.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "tailwind-scrollbar-hide": "^1.1.7",
+    "wagmi": "^0.6.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "netlify build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -43,10 +46,12 @@
     ]
   },
   "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "@openzeppelin/contracts": "^4.7.3",
     "autoprefixer": "^10.4.8",
-    "gh": "^2.8.9",
-    "netlify-cli": "^11.7.1",
-    "pages": "^0.0.16",
+    "hardhat": "^2.11.1",
+    "hardhat-deploy": "^0.11.15",
+    "netlify-cli": "^11.8.0",
     "postcss": "^8.4.16",
     "react-router-dom": "^6.3.0",
     "tailwindcss": "^3.1.8"
