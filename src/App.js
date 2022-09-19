@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { publicProvider } from "wagmi/providers/public";
+import { createClient, configureChains, chain, WagmiConfig } from "wagmi";
 import Home from "./pages/Home";
 import Header from "./components/layout/Header";
 import Dispose from "./pages/Dispose";
@@ -31,32 +33,45 @@ function App() {
     if (modalRef.current === e.target) setIsOpen(false);
   };
 
+  const { provider, webSocketProvider } = configureChains(
+    [chain.polygon, chain.polygonMumbai],
+    [publicProvider()]
+  );
+
+  const client = createClient({
+    provider,
+    webSocketProvider,
+    autoConnect: true,
+  });
+
   return (
-    <BrowserRouter>
-      <div className={`${isOpen || openModal ? `overflow-hidden` : `overflow-visible`} h-screen`}>
-        <div
-          ref={modalRef}
-          onClick={onClk}
-          className={`${
-            isOpen || openModal ? null : `hidden`
-          } transition-opacity duration-300  absolute z-10 bg-black opacity-60 h-full w-full ease-in`}
-        ></div>
-        {openModal ? <ConnectWallet openModal={openModal} setOpenModal={setOpenModal} /> : null}
-        <Header connect={connect} />
+    <WagmiConfig client={client}>
+      <BrowserRouter>
+        <div className={`${isOpen || openModal ? `overflow-hidden` : `overflow-visible`} h-screen`}>
+          <div
+            ref={modalRef}
+            onClick={onClk}
+            className={`${
+              isOpen || openModal ? null : `hidden`
+            } transition-opacity duration-300  absolute z-10 bg-black opacity-60 h-full w-full ease-in`}
+          ></div>
+          {openModal ? <ConnectWallet openModal={openModal} setOpenModal={setOpenModal} /> : null}
+          <Header connect={connect} />
 
-        <Routes>
-          <Route path="wallet" element={<Wallet />} />
+          <Routes>
+            <Route path="wallet" element={<Wallet />} />
 
-          <Route path="/" element={<Home />} />
-          <Route path="register" element={<Register />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route index path="dispose" element={<Dispose isOpen={isOpen} openMenu={openMenu} />} />
-          <Route path="collect" element={<Collect isOpen={isOpen} openMenu={openMenu} />} />
-          <Route path="recycle" element={<Recycle isOpen={isOpen} openMenu={openMenu} />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+            <Route path="/" element={<Home />} />
+            <Route path="register" element={<Register />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route index path="dispose" element={<Dispose isOpen={isOpen} openMenu={openMenu} />} />
+            <Route path="collect" element={<Collect isOpen={isOpen} openMenu={openMenu} />} />
+            <Route path="recycle" element={<Recycle isOpen={isOpen} openMenu={openMenu} />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </WagmiConfig>
   );
 }
 

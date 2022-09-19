@@ -2,16 +2,16 @@ require("@nomicfoundation/hardhat-toolbox");
 require("hardhat-deploy");
 
 const config = {
-  solidity: "0.8.10",
+  solidity: "0.8.9",
   defaultNetwork: "hardhat",
   networks: {
     hardhat: {
       chainId: 31337,
     },
-    goerli: {
-      url: process.env.GOERLI_URL || "",
+    mumbai: {
+      url: process.env.MUMBAI_URL || "",
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-      chainId: 5,
+      chainId: 80001,
       saveDeployments: true,
     },
   },
