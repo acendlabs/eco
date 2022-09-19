@@ -164,13 +164,39 @@ function Home() {
           </p>
           <h3>How It Works</h3>
           <img src={group} alt="" />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.{" "}
-          </p>
         </section>
+
+        <div className="py-16 p-16 space-y-8">
+          <div className="flex justify-between flex-col items-center lg:flex-row space-y-4 sm:space-x-8 ">
+            <p className="relative w-full lg:w-[30%] h-52 flex items-center shadow p-8 text-sm sm:text-base rounded-lg">
+              <strong className="absolute -z-10 top-0 left-0 text-acend-theme-dark text-lg sm:text-2xl bg-acend-25 rounded p-4">
+                1.
+              </strong>
+              First, by gathering of the plastic waste properly,preferably in a
+              waste bag or waste basket so it does not litter the environment.
+            </p>
+            <p className="relative w-full lg:w-[30%] h-52 flex items-center shadow p-8 text-sm sm:text-base rounded-lg">
+              <strong className="absolute -z-10 top-0 left-0 text-acend-theme-dark text-lg sm:text-2xl bg-acend-25 rounded p-4">
+                2.
+              </strong>
+              Then the gathered plastic waste is taken to a plastic waste
+              collectors around you and each plastic attracts a commission or an
+              incentive.
+            </p>
+            <p className="relative w-full lg:w-[30%] h-52 flex items-center shadow p-8 text-sm sm:text-base rounded-lg">
+              <strong className="absolute -z-10 top-0 left-0 text-acend-theme-dark text-lg sm:text-2xl bg-acend-25 rounded p-4">
+                3.
+              </strong>
+              The collectors in turn remit the plastic waste to recyclers for
+              the waste to be recycled.
+            </p>
+          </div>
+          <p className="shadow text-sm sm:text-base p-4 sm:p-8">
+            This process of recycling plastic waste by AcendEco ensures that the
+            environment is safe and free from waste and in turn individuals or
+            organizations earn money from disposal of plastic waste properly.
+          </p>
+        </div>
         <Footer />
       </body>
     </div>

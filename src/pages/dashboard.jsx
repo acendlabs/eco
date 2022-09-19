@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./dashboard.css";
+import "./Dashboard.css";
 import logolight from "../images/logolight.png";
 import Alert from "../components/layout/Alert";
 import Table from "../components/layout/Table";
@@ -11,6 +11,7 @@ import Title from "../components/layout/Title";
 
 const Dashboard = () => {
   const [file, setFile] = useState({ data: null });
+  // eslint-disable-next-line
   const [pool, setPool] = useState([]);
   // eslint-disable-next-line
   const [filename, setFilename] = useState("Choose Image");
