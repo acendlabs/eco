@@ -7,7 +7,7 @@ import Dashboard from "./pages/dashboard";
 import Collect from "./pages/Collect";
 import Error from "./pages/Error";
 import Recycle from "./pages/Recycle";
-import ChooseIdentity from "./pages/ChooseIdentity";
+import Register from "./pages/Register";
 import ConnectWallet from "./components/modal/ConnectWallet";
 import Wallet from "./pages/Wallet";
 
@@ -33,11 +33,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div
-        className={`${
-          isOpen || openModal ? `overflow-hidden` : `overflow-visible`
-        } h-screen`}
-      >
+      <div className={`${isOpen || openModal ? `overflow-hidden` : `overflow-visible`} h-screen`}>
         <div
           ref={modalRef}
           onClick={onClk}
@@ -45,30 +41,18 @@ function App() {
             isOpen || openModal ? null : `hidden`
           } transition-opacity duration-300  absolute z-10 bg-black opacity-60 h-full w-full ease-in`}
         ></div>
-        {openModal ? (
-          <ConnectWallet openModal={openModal} setOpenModal={setOpenModal} />
-        ) : null}
+        {openModal ? <ConnectWallet openModal={openModal} setOpenModal={setOpenModal} /> : null}
         <Header connect={connect} />
 
         <Routes>
           <Route path="wallet" element={<Wallet />} />
 
           <Route path="/" element={<Home />} />
-          <Route path="choose-identity" element={<ChooseIdentity />} />
+          <Route path="register" element={<Register />} />
           <Route path="dashboard" element={<Dashboard />} />
-          <Route
-            index
-            path="dispose"
-            element={<Dispose isOpen={isOpen} openMenu={openMenu} />}
-          />
-          <Route
-            path="collect"
-            element={<Collect isOpen={isOpen} openMenu={openMenu} />}
-          />
-          <Route
-            path="recycle"
-            element={<Recycle isOpen={isOpen} openMenu={openMenu} />}
-          />
+          <Route index path="dispose" element={<Dispose isOpen={isOpen} openMenu={openMenu} />} />
+          <Route path="collect" element={<Collect isOpen={isOpen} openMenu={openMenu} />} />
+          <Route path="recycle" element={<Recycle isOpen={isOpen} openMenu={openMenu} />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </div>
