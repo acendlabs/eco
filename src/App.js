@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Header from "./components/layout/Header";
 import Dispose from "./pages/Dispose";
-import Dashboard from "./pages/dashboard";
+import Dashboard from "./pages/Dashboard";
 import Collect from "./pages/Collect";
 import Error from "./pages/Error";
 import Recycle from "./pages/Recycle";

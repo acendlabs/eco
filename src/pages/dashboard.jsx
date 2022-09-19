@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./dashboard.css";
+import "./Dashboard.css";
 import logolight from "../images/logolight.png";
 import Alert from "../components/layout/Alert";
 import Table from "../components/layout/Table";
